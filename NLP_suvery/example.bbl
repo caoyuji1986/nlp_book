@@ -1,0 +1,365 @@
+\begin{thebibliography}{10}
+
+\bibitem{Moody2016Mixing}
+Christopher~E Moody.
+\newblock Mixing dirichlet topic models and word embeddings to make lda2vec.
+\newblock 2016.
+
+\bibitem{2019Hierarchically}
+Leyang Cui and Yue Zhang.
+\newblock Hierarchically-refined label attention network for sequence labeling.
+\newblock 2019.
+
+\bibitem{2016Attention}
+Bing Liu and Ian Lane.
+\newblock Attention-based recurrent neural network models for joint intent
+  detection and slot filling.
+\newblock 2016.
+
+\bibitem{Liu2016Attention}
+Bing Liu and Ian Lane.
+\newblock Attention-based recurrent neural network models for joint intent
+  detection and slot filling.
+\newblock 2016.
+
+\bibitem{peters-etal-2018-deep}
+Matthew Peters, Mark Neumann, Mohit Iyyer, Matt Gardner, Christopher Clark,
+  Kenton Lee, and Luke Zettlemoyer.
+\newblock Deep contextualized word representations.
+\newblock In {\em Proceedings of the 2018 Conference of the North {A}merican
+  Chapter of the Association for Computational Linguistics: Human Language
+  Technologies, Volume 1 (Long Papers)}, pages 2227--2237, New Orleans,
+  Louisiana, June 2018. Association for Computational Linguistics.
+
+\bibitem{2016Pairwise}
+Hua He and Jimmy~J Lin.
+\newblock Pairwise word interaction modeling with deep neural networks for
+  semantic similarity measurement.
+\newblock In {\em Conference of the North American Chapter of the Association
+  for Computational Linguistics: Human Language Technologies}, 2016.
+
+\bibitem{Talman2019Sentence}
+Aarne Talman, Anssi Yli-Jyra, and Joerg Tiedemann.
+\newblock Sentence embeddings in nli with iterative refinement encoders.
+\newblock {\em Natural Language Engineering}, 25(PT.4):467--482, 2019.
+
+\bibitem{zhang2015character-level}
+Xiang Zhang, Junbo Zhao, and Yann Lecun.
+\newblock Character-level convolutional networks for text classification.
+\newblock pages 649--657, 2015.
+
+\bibitem{yang2016hierarchical}
+Zichao Yang, Diyi Yang, Chris Dyer, Xiaodong He, Alexander~J Smola, and Eduard
+  Hovy.
+\newblock Hierarchical attention networks for document classification.
+\newblock pages 1480--1489, 2016.
+
+\bibitem{joulin2017bag}
+Armand Joulin, Edouard Grave, Piotr Bojanowski, and Tomas Mikolov.
+\newblock Bag of tricks for efficient text classification.
+\newblock 2:427--431, 2017.
+
+\bibitem{lai2015recurrent}
+Siwei Lai, Liheng Xu, Kang Liu, and Jun Zhao.
+\newblock Recurrent convolutional neural networks for text classification.
+\newblock pages 2267--2273, 2015.
+
+\bibitem{hochreiter1997long}
+Sepp Hochreiter and Jurgen Schmidhuber.
+\newblock Long short-term memory.
+\newblock {\em Neural Computation}, 9(8):1735--1780, 1997.
+
+\bibitem{Pennington2014Glove}
+Jeffrey Pennington, Richard Socher, and Christopher Manning.
+\newblock Glove: Global vectors for word representation.
+\newblock In {\em Conference on Empirical Methods in Natural Language
+  Processing}, 2014.
+
+\bibitem{2017Fixing}
+Ilya Loshchilov and Frank Hutter.
+\newblock Fixing weight decay regularization in adam.
+\newblock 2017.
+
+\bibitem{2018Slot}
+Chih~Wen Goo, Guang Gao, Yun~Kai Hsu, Chih~Li Huo, and Yun~Nung Chen.
+\newblock Slot-gated modeling for joint slot filling and intent prediction.
+\newblock In {\em Proceedings of the 2018 Conference of the North American
+  Chapter of the Association for Computational Linguistics: Human Language
+  Technologies, Volume 2 (Short Papers)}, 2018.
+
+\bibitem{1997Long}
+S~Hochreiter and J~Schmidhuber.
+\newblock Long short-term memory.
+\newblock {\em Neural Computation}, 9(8):1735--1780, 1997.
+
+\bibitem{wang2018glue}
+Alex Wang, Amanpreet Singh, Julian Michael, Felix Hill, Omer Levy, and Samuel~R
+  Bowman.
+\newblock Glue: A multi-task benchmark and analysis platform for natural
+  language understanding.
+\newblock {\em arXiv: Computation and Language}, 2018.
+
+\bibitem{dauphin2016language}
+Yann~N Dauphin, Angela Fan, Michael Auli, and David Grangier.
+\newblock Language modeling with gated convolutional networks.
+\newblock {\em arXiv: Computation and Language}, 2016.
+
+\bibitem{mikolov2010recurrent}
+Tomas Mikolov, Martin Karafiat, Lukas Burget, Jan Cernocký, and Sanjeev
+  Khudanpur.
+\newblock Recurrent neural network based language model.
+\newblock pages 1045--1048, 2010.
+
+\bibitem{radford2019language}
+Alec Radford, Jeff Wu, Rewon Child, David Luan, Dario Amodei, and Ilya
+  Sutskever.
+\newblock Language models are unsupervised multitask learners.
+\newblock 2019.
+
+\bibitem{vaswani2017attention}
+Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones,
+  Aidan~N Gomez, Lukasz Kaiser, and Illia Polosukhin.
+\newblock Attention is all you need.
+\newblock pages 5998--6008, 2017.
+
+\bibitem{strubell2017fast}
+Emma Strubell, Patrick Verga, David Belanger, and Andrew Mccallum.
+\newblock Fast and accurate entity recognition with iterated dilated
+  convolutions.
+\newblock pages 2670--2680, 2017.
+
+\bibitem{huang2015bidirectional}
+Zhiheng Huang, Wei Xu, and Kai Yu.
+\newblock Bidirectional lstm-crf models for sequence tagging, 2015.
+
+\bibitem{devlin2018bert}
+Jacob Devlin, Mingwei Chang, Kenton Lee, and Kristina Toutanova.
+\newblock Bert: Pre-training of deep bidirectional transformers for language
+  understanding.
+\newblock {\em arXiv: Computation and Language}, 2018.
+
+\bibitem{chen2017enhanced}
+Qian Chen, Xiaodan Zhu, Zhenhua Ling, Si~Wei, Hui Jiang, and Diana Inkpen.
+\newblock Enhanced lstm for natural language inference.
+\newblock 1:1657--1668, 2017.
+
+\bibitem{yin2016abcnn}
+Wenpeng Yin, Hinrich Schutze, Bing Xiang, and Bowen Zhou.
+\newblock Abcnn: Attention-based convolutional neural network for modeling
+  sentence pairs.
+\newblock {\em Transactions of the Association for Computational Linguistics},
+  4(1):259--272, 2016.
+
+\bibitem{humeau2019poly-encoders}
+Samuel Humeau, Kurt Shuster, Marieanne Lachaux, and Jason Weston.
+\newblock Poly-encoders: Transformer architectures and pre-training strategies
+  for fast and accurate multi-sentence scoring.
+\newblock {\em arXiv: Computation and Language}, 2019.
+
+\bibitem{mikolov2013efficient}
+Tomas Mikolov, Kai Chen, Greg~S Corrado, and Jeffrey Dean.
+\newblock Efficient estimation of word representations in vector space.
+\newblock 2013.
+
+\bibitem{sutskever2014sequence}
+Ilya Sutskever, Oriol Vinyals, and Quoc~V Le.
+\newblock Sequence to sequence learning with neural networks.
+\newblock {\em arXiv: Computation and Language}, 2014.
+
+\bibitem{chen2016xgboost}
+Tianqi Chen and Carlos Guestrin.
+\newblock Xgboost: A scalable tree boosting system.
+\newblock pages 785--794, 2016.
+
+\bibitem{suykens2001support}
+Johan A~K Suykens.
+\newblock Support vector machines : a nonlinear modelling and control
+  perspective.
+\newblock {\em European Journal of Control}, 7:311--327, 2001.
+
+\bibitem{akhtar2019textrank}
+Nadeem Akhtar, M~M~Sufyan Beg, and Hira Javed.
+\newblock Textrank enhanced topic model for query focussed text summarization.
+\newblock pages 1--6, 2019.
+
+\bibitem{blei2003latent}
+David~M Blei, Andrew~Y Ng, and Michael~I Jordan.
+\newblock Latent dirichlet allocation.
+\newblock {\em Journal of Machine Learning Research}, 3:993--1022, 2003.
+
+\bibitem{bengio2003a}
+Yoshua Bengio, Rejean Ducharme, Pascal Vincent, and Christian Janvin.
+\newblock A neural probabilistic language model.
+\newblock {\em Journal of Machine Learning Research}, 3(6):1137--1155, 2003.
+
+\bibitem{kim2014convolutional}
+Yoon Kim.
+\newblock Convolutional neural networks for sentence classification, 2014.
+
+\bibitem{bahdanau2014neural}
+Dzmitry Bahdanau, Kyunghyun Cho, and Yoshua Bengio.
+\newblock Neural machine translation by jointly learning to align and
+  translate, 2014.
+
+\bibitem{ID_lihang}
+李航.
+\newblock {\em 统计机器学习}.
+\newblock 清华大学出版社, 1997.
+
+\bibitem{ID_zhouzhihua}
+周志华.
+\newblock {\em 机器学习}.
+\newblock 清华大学出版社, 2018.
+
+\bibitem{2018A}
+Jing Li, Aixin Sun, Jianglei Han, and Chenliang Li.
+\newblock A survey on deep learning for named entity recognition.
+\newblock 2018.
+
+\bibitem{Baradaran2020A}
+Razieh Baradaran, Razieh Ghiasi, and Hossein Amirkhani.
+\newblock A survey on machine reading comprehension systems.
+\newblock 2020.
+
+\bibitem{2016Bidirectional}
+Minjoon Seo, Aniruddha Kembhavi, Ali Farhadi, and Hannaneh Hajishirzi.
+\newblock Bidirectional attention flow for machine comprehension.
+\newblock 2016.
+
+\bibitem{2018QANet}
+Adams~Wei Yu, David Dohan, Minh~Thang Luong, Rui Zhao, Kai Chen, Mohammad
+  Norouzi, and Quoc~V Le.
+\newblock Qanet: Combining local convolution with global self-attention for
+  reading comprehension.
+\newblock 2018.
+
+\bibitem{2016ReasoNet}
+Yelong Shen, Po~Sen Huang, Jianfeng Gao, and Weizhu Chen.
+\newblock Reasonet: Learning to stop reading in machine comprehension.
+\newblock 2016.
+
+\bibitem{2016Machine}
+Shuohang Wang and Jing Jiang.
+\newblock Machine comprehension using match-lstm and answer pointer.
+\newblock 2016.
+
+\bibitem{2017MEMEN}
+Boyuan Pan, Hao Li, Zhou Zhao, Bin Cao, Deng Cai, and Xiaofei He.
+\newblock Memen: Multi-layer embedding with memory networks for machine
+  comprehension.
+\newblock 2017.
+
+\bibitem{2015Teaching}
+Karl~Moritz Hermann, Tomá Koisk, Edward Grefenstette, Lasse Espeholt, Will
+  Kay, Mustafa Suleyman, and Phil Blunsom.
+\newblock Teaching machines to read and comprehend.
+\newblock 2015.
+
+\bibitem{2017RACE}
+Guokun Lai, Qizhe Xie, Hanxiao Liu, Yiming Yang, and Eduard Hovy.
+\newblock Race: Large-scale reading comprehension dataset from examinations.
+\newblock 2017.
+
+\bibitem{2016Iterative}
+Alessandro Sordoni, Philip Bachman, Adam Trischler, and Yoshua Bengio.
+\newblock Iterative alternating neural attention for machine reading.
+\newblock 2016.
+
+\bibitem{2016Dynamic}
+Caiming Xiong, Victor Zhong, and Richard Socher.
+\newblock Dynamic coattention networks for question answering.
+\newblock 2016.
+
+\bibitem{Joachims2009Learning}
+Thorsten Joachims, Hang Li, Tie~Yan Liu, and Chengxiang Zhai.
+\newblock {\em Learning to rank for information retrieval (LR4IR 2007).}
+\newblock Now Publishers,, 2009.
+
+\bibitem{papineni2002bleu}
+Kishore Papineni, Salim Roukos, Todd Ward, and Weijing Zhu.
+\newblock Bleu: a method for automatic evaluation of machine translation.
+\newblock pages 311--318, 2002.
+
+\bibitem{yang2019xlnet}
+Zhilin Yang, Zihang Dai, Yiming Yang, Jaime Carbonell, Ruslan Salakhutdinov,
+  and Quoc~V. Le.
+\newblock Xlnet: Generalized autoregressive pretraining for language
+  understanding, 2019.
+
+\bibitem{dai2019transformerxl}
+Zihang Dai, Zhilin Yang, Yiming Yang, Jaime Carbonell, Quoc~V. Le, and Ruslan
+  Salakhutdinov.
+\newblock Transformer-xl: Attentive language models beyond a fixed-length
+  context, 2019.
+
+\bibitem{m2019spanbert}
+Mandar Joshi, Danqi Chen, Yinhan Liu, Daniel~S. Weld, Luke Zettlemoyer, and
+  Omer Levy.
+\newblock Spanbert: Improving pre-training by representing and predicting
+  spans, 2019.
+
+\bibitem{gehring2017convolutional}
+Jonas Gehring, Michael Auli, David Grangier, Denis Yarats, and Yann~N Dauphin.
+\newblock Convolutional sequence to sequence learning.
+\newblock {\em arXiv: Computation and Language}, 2017.
+
+\bibitem{inproceedings}
+Jeffrey Dean and Sanjay Ghemawat.
+\newblock Mapreduce: Simplified data processing on large clusters.
+\newblock volume~51, pages 137--150, 01 2004.
+
+\bibitem{chang2008bigtable}
+Fay~W Chang, Jeffrey Dean, Sanjay Ghemawat, Wilson~C Hsieh, Deborah~A Wallach,
+  Michael Burrows, Tushar~Deepak Chandra, Andrew Fikes, and Robert Gruber.
+\newblock Bigtable: A distributed storage system for structured data.
+\newblock {\em ACM Transactions on Computer Systems}, 26(2):4--26, 2008.
+
+\bibitem{shi2010list-wise}
+Yue Shi, Martha Larson, and Alan Hanjalic.
+\newblock List-wise learning to rank with matrix factorization for
+  collaborative filtering.
+\newblock pages 269--272, 2010.
+
+\bibitem{shen2014a}
+Yelong Shen, Xiaodong He, Jianfeng Gao, Li~Deng, and Gregoire Mesnil.
+\newblock A latent semantic model with convolutional-pooling structure for
+  information retrieval.
+\newblock pages 101--110, 2014.
+
+\bibitem{Kiefel_underreview}
+Martin Kiefel, Varun Jampani, and Peter~V. Gehler.
+\newblock Under review as a workshop contribution at iclr 2015 permutohedral
+  lattice cnns.
+
+\bibitem{chang2020pre-training}
+Weicheng Chang, Felix~X Yu, Yinwen Chang, Yiming Yang, and Sanjiv Kumar.
+\newblock Pre-training tasks for embedding-based large-scale retrieval.
+\newblock {\em arXiv: Learning}, 2020.
+
+\bibitem{li2018survey}
+Jing Li, Aixin Sun, Jianglei Han, and Chenliang Li.
+\newblock A survey on deep learning for named entity recognition, 2018.
+
+\bibitem{joachims2002optimizing}
+Thorsten Joachims.
+\newblock Optimizing search engines using clickthrough data.
+\newblock pages 133--142, 2002.
+
+\bibitem{kingma2014adam}
+Diederik~P Kingma and Jimmy Ba.
+\newblock Adam: A method for stochastic optimization.
+\newblock {\em arXiv: Learning}, 2014.
+
+\bibitem{10.5555/3086952}
+Ian Goodfellow, Yoshua Bengio, and Aaron Courville.
+\newblock {\em Deep Learning}.
+\newblock The MIT Press, 2016.
+
+\bibitem{dai2019transformer-xl}
+Zihang Dai, Zhilin Yang, Yiming Yang, Jaime~G Carbonell, Quoc~V Le, and Ruslan
+  Salakhutdinov.
+\newblock Transformer-xl: Attentive language models beyond a fixed-length
+  context.
+\newblock {\em arXiv: Learning}, 2019.
+
+\end{thebibliography}
