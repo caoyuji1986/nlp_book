@@ -196,7 +196,7 @@
 \newglossaryentry{SAN}{name={SAN},description={Self attention networks}}
 \newglossaryentry{NMT}{name={NMT},description={Neural machine translation}}
 \newglossaryentry{MRC}{name={MRC},description={Machine reading comprehension}}
-\newglossaryentry{ASR}{name={MRC},description={Automatic speech recognition}}
+\newglossaryentry{ASR}{name={ASR},description={Automatic speech recognition}}
 \newglossaryentry{HMM}{name={HMM},description={Hidden markov model}}
 \newglossaryentry{CRF}{name={CRF},description={Conditional random field}}
 \newglossaryentry{LAN}{name={LAN},description={Label attention network}}
@@ -206,7 +206,7 @@
 \newglossaryentry{IDCNN}{name={IDCNN},description={Iterated Dilated CNN}}
 \newglossaryentry{NLU}{name={NLU},description={Natural language understanding}}
 \newglossaryentry{NLP}{name={NLP},description={Natural language processing}}
-\newglossaryentry{NER}{name={NER},description={Named Entity Recognition}}
+\newglossaryentry{NER}{name={NER},description={Named entity recognition}}
 \newglossaryentry{RNNLM}{name={RNNLM},description={Recurrent neural networks language model}}
 \newglossaryentry{CNNLM}{name={CNNLM},description={Convolutional neural networks language model}}
 \newglossaryentry{NNLM}{name={NNLM},description={Neural networks language model}}
@@ -214,7 +214,11 @@
 \newglossaryentry{LDA}{name={LDA},description={Latent dirichlet allocation}}
 \newglossaryentry{LSA}{name={LSA},description={Latent semantic analysis}}
 \newglossaryentry{SVM}{name={SVM},description={Support vector machine}}
-\newglossaryentry{HAN}{name={HAN},description={Hierarchical Attention Networks}}
+\newglossaryentry{HAN}{name={HAN},description={Hierarchical attention networks}}
+\newglossaryentry{MLM}{name={MLM},description={Masked language mode}}
+\newglossaryentry{MLP}{name={MLP},description={Multi-layer perceptron}}
+\newglossaryentry{NLI}{name={NLI},description={Natural language inference}}
+\newglossaryentry{MTDNN}{name={MTDNN},description={Multi-task deep neural network}}
 \printglossaries
 
 %\renewcommand{\nomname}{英文简写}
@@ -645,6 +649,17 @@ C_{i,j}=-\frac{1}{2}(1+S_{i,j})log(p(d_i\triangleright d_j))-
 $$
 有了逆序损失我们就可以构建整体损失了。
 
+\subsubsection{Focal Loss}
+在深度学习领域，训练集中通常有些类别的样本数量比较多有些类别的样本数量比较少。对于样本的数量不平衡性，从直觉来讲可以通过加权的方法来处理，也就是对数量较多的样本类的损失进行降权，对于数量较少的样本类的损失进行加权。我们假定第$t$类的第$i$个样本的交叉熵损失为$CE_t(i)$，那么我们可以将样本的损失定义为$\alpha_{t}CE_t(i)$，其中$\alpha_{t}$是经验权重超参数。
+
+在训练集中总是有些样本是容易处理的，其他样本是比较难于处理的。一方面，容易处理的样本数量要远远多于较难处理的样本；另一方面，较难处理的样本通常更有区分度。上述通过加权的方法并没有利用样本难易不同这条信息。Focal Loss就是尝试对容易的样本进行降权来实现的。假定模型将一个属于$t$类的样本$i$分为$t$类的概率为$p_t(i)$，那么这个样本的Focal Loss就可以通过下面的式子来定义：
+$$
+FL(i)=(1-p_t(i))^{\gamma}CE_t(i)
+$$
+其中$\gamma>0$是超参数，被称为调制系数。一个样本如果被错分的时候，其$p_t(i)$较小，即这个样本的难度对于模型较难（尚未被正确分类），因此这个样本的损失倾向于不被模型降权；相反如果一个样本本正确分类的时候，其$p_t(i)$较大，即这个样本的难度对于模型来说较容易（已经被正确分类了），因此这个样本的损失倾向于被模型降权。总体来说，Focal loss就是一种能够衡量样本难易度对于分类的贡献度的损失函数。一般样本的数量不平衡性和样本的难易不平衡性是伴生的现象，为了应对这个问题，通常会将上述两种策略融合起来：
+$$
+FL(i)=\alpha_{t}(1-p_t(i))^{\gamma}CE_t(i)
+$$
 \section{优化器介绍}
 \subsection{标准优化器}
 在神经网络优化的时候，通常需要使用梯度下降法。对于标准优化器，根据样本的规模不同可以分为三类:
@@ -1669,7 +1684,7 @@ $$
 \caption{Transformer网络结构}\label{fig:gpt1}
 \end{center}
 \end{figure}
-\gls{GPT} 模型就是摘取了Transformer的编码器，并改造了其中的自注意力模块，保证当前词语的注意力不会放到当前词的右边，保证了因果性，并且给编码器增加了一个用于训练语言模型损失函数。值得注意的是\gls{GPT}通过海量的非监督语料的长时间训练，取得了广受瞩目的成绩，甚至不少媒体对其进行了报道，不过\gls{GPT}就是Transformer的Encoder的因果性改造后通过传统语言模型训练得来的。
+\gls{GPT} 模型就是摘取了Transformer的编码器，并改造了其中的自注意力模块，保证当前词语的注意力不会放到当前词的右边，保证了因果性，并且给编码器增加了一个用于训练语言模型的损失函数。值得注意的是\gls{GPT}通过海量的非监督语料的长时间训练，取得了广受瞩目的成绩，甚至不少媒体对其进行了报道，不过\gls{GPT}就是Transformer的Encoder的因果性改造后通过传统语言模型训练损失得来的。
 
 由于这个模型相对复杂，我们一步一步来讲解\gls{GPT}基于Tensorflow的实现过程。首先定义文本输入和label，其中x\_placeholder是文本的ID序列，x\_mask\_placeholder是文本ID序列的有效位置，一般来说，x\_placeholder的每一个句子的长度通过补零得到一个长度为max\_seq\_len的整数数组，因此需要通过x\_mask\_placeholder来表明哪些位置是有效的位置(mask数组对应位置值为1)，哪些位置是补零的位置(mask数组对应位置值为0)。另外在语言模型训练中通常会对输入序列前补一个特殊字符(我们记为[START])表示句子的开始，并在label序列的最后补一个特殊字符(我们记为[END])表示句子的结束。
 \begin{lstlisting}[language={python}]
@@ -2228,7 +2243,7 @@ class FastText():
 \subsection{长文本分类—HAN}
 对于长文本，无论是TextCNN 还是TextRNN都没有充分利用文本的结构信息。长文本通常会分为若干短句子，短句子之间通过标点符号来分割，每个短句子都是一个相对独立的语意单元。\gls{HAN}网络尝试通过分层语意表示的方法来构建篇章级别的文本表示，这种做法利用了长文本的基本结构，能在词汇级别和句子级别分别建立注意力模型，从而使得分类损失能够和关键的词汇和句子表示建立联系，使得该算法在长文本分类领域成为具有代表性地工作之一。
 
-模型的整体结构如图\ref{fig:han1}所示，分为两个主要的层次——词编码和自注意力层、句编码和自注意力层和分类层。
+模型的整体结构如图\ref{fig:han1}所示，分为三个主要的层次——词编码和自注意力层、句编码和自注意力层以及分类层。
 
 \begin{figure}[H]
 \begin{center}
@@ -2396,10 +2411,17 @@ class TextHAN:
 \subsection{亚词汇级别文本分类-charCNN}
 在文本分类领域，有这样一种场景，其文本表意非常杂乱，比如是一个\gls{ASR} 模块识别出来的，由于在实际生活中，很多人发音并不标准，带有很明显的地域发音特点, 相当于引入了很多错误的知识。特别是在中文环境，存在大量的方言区，我们不可能为每个方言区训练一套子语言模型，因此\gls{ASR}识别之后的文本句法不通顺现象更加严重，为此，人们希望从发音的角度进行文本识别。将文本表音的音素代替汉字作为基本单元，通过精心设计的卷积神经网络，能起到抑制方言噪声的作用。这项研究最初是基于英文字符的，是用字符代替单词作为基本文本单元，通过卷积神经网络进行文本分类。
 
-提出的模型结构包含六个卷积层和三个全连接层，每个卷积层后面会跟一个池化层。在图\ref{fig:charcnn1}这个例子中，有一段文本经过符号化对每个符号进行$4$维度Embedding变成一个$4 \times 8$的矩阵，这个矩阵经过$4$个宽度为$3$的卷积核经过一维卷积之后，形成一个$(8-3+1) \times 4$的特征图像，随后经过一个宽度为$3$步长为$3$的池化之后，得到一个$(6/3)\times 4$的池化特征图，并进入下一层。每个全连接层后面都会接一个dropout层，为了说明网络的结构我们举一个例子，这个例子的每个句子的长度是1014，最后形成一个长为34的向量序列。
+Xiang Zhang等人提出的模型结构包含6个卷积层和6个全连接层，每个卷积层后面会跟1个池化层。为了说明卷积和池化的过程,我们举一个简单的例子，这个例子仅仅是为了说明卷积和池化的过程，在图\ref{fig:charcnn1}这个例子中，有一段文本经过符号化后，我们对每个符号进行$4$维度Embedding变成一个$4 \times 8$的矩阵，这个矩阵经过$4$个宽度为$3$的卷积核经过一维卷积之后，形成一个$(8-3+1) \times 4$的特征图像，随后经过一个宽度为$3$步长为$3$的池化之后，得到一个$(6/3)\times 4$的池化特征图，并进入下一层。每个全连接层后面都会接一个dropout层。为了说明网络的完整结构我们举一个完整的网络例子，这个例子的每个句子的长度是1014，最后形成一个长为34的向量序列。
+\begin{figure}[h]
+	\begin{center}
+	\includegraphics[width=5.6in]{figures/charcnn1.png}
+	\caption{charCNN的卷积结构示例}
+	\label{fig:charcnn1}
+\end{center}
+\end{figure}
 
 \begin{table}[h]
-	\caption{char-CNN的卷积网络结构}  
+	\caption{charCNN的卷积网络结构}  
 	\label{tab:schedule}
 	\centering
 	\scalebox{0.9}{
@@ -2416,7 +2438,8 @@ class TextHAN:
 	}
 \end{table}
 
-最后我们给出基于上述例子的char-\gls{CNN} 的代码实现：
+最后我们给出基于上述例子的char\gls{CNN} 的代码实现：
+
 \begin{lstlisting}
 	class CharCNN(_Classifier):
 
@@ -2465,15 +2488,6 @@ class TextHAN:
         return x
 \end{lstlisting}
 
-\begin{figure}[htbp]
-\begin{center}
-\includegraphics[width=5.6in]{figures/charcnn1.png}
-\caption{char-\gls{CNN} 的卷积结构示例}
-
-\label{fig:charcnn1}
-\end{center}
-\end{figure}
-
 \section{句对分类技术}
 在文本分类领域，有一些和句子对有关的任务，其中最有影响力的是自然语言推理。自然语言推理的任务是识别给定的两个句子的语意关系是不是无关、蕴含和矛盾。所谓无关和矛盾是容易理解的，所谓蕴含是指，其中一个文本作为前提（premise），另一个文本作为假设（hypothesis），如果根据前提P能够推理得出假设H，那么就说P蕴含H，记做P$\rightarrow$ H。这跟一阶逻辑中的蕴含关系是类似的。我们举个例子，如果我们看到“一只狗在雪地里玩足球”，那么如果别人跟我们讲“一个哺乳动物在雪地里玩足球”，我们认为事实是成立的。这种关系就叫蕴含，因为狗属于哺乳动物因此可以根据前提推断出假设。
 \begin{table}[h]
@@ -2497,8 +2511,8 @@ class TextHAN:
 目前的句对分类算法包含两个主要的挑战，第一个是构建句子的语意表示；第二个是建模句子之间的语意关系。目前学术界对句子语意建模的方法主要有两种：一种是基于双向\gls{LSTM}/\gls{GRU}的，具有代表意义的网络包括InferSent和ESIM，一种是基于卷积神经网络的，代表网络有ABCNN。句子之间语意关系的建模，目前有三种，第一种是InferSent为代表的简单计算拼接；第二种是基于交互Attention的代表有ABCNN；第三种是基于卷积网络的，代表网络是PWIM网络，这种方式从效果上看比较一般，而且实现起来比较繁琐，我们这里就不详细介绍了。我们下面来挑选几个具有代表性地网络来介绍。
 
 \subsection{InferSent}
-InferSent 网络最初提出的时候，并不是用来解决NLI问题的，只是利用SNLI数据来训练句子的向量表示。网络的结构也比较简单，如图\ref{fig:infersent1}所示。首先将数据的前提句$P=[p_1,p_2\cdots,p_n]$和假设句$H=[h_1,h_2\cdots,h_n]$分别用两个双向\gls{LSTM}/\gls{CNN}或者\gls{SAN}编码之后得到其向量化的表示——$U=[u_1,u_2,\cdots,u_n]$和$V=[v_1,v_2,\cdots,v_n]$，经过简单的数学运算后拼接在一起得到特征的隐层表示$[U;V;|U \ominus V|;U\otimes V]$，通过全连接网络作为MLP层的输入。
-\begin{figure}[htbp]
+InferSent 网络最初提出的时候，并不是用来解决自然语言推理（\gls{NLI}）问题的，只是利用SNLI数据集来训练句子的向量表示。网络的结构也比较简单，如图\ref{fig:infersent1}所示。首先将数据的前提句$P=[p_1,p_2\cdots,p_n]$和假设句$H=[h_1,h_2\cdots,h_n]$分别用两个双向\gls{LSTM}/\gls{CNN}或者\gls{SAN}编码之后得到其向量化的表示——$U=[u_1,u_2,\cdots,u_n]$和$V=[v_1,v_2,\cdots,v_n]$，经过简单的数学运算后拼接在一起得到特征的隐层表示$[U;V;|U \ominus V|;U\otimes V]$，通过全连接网络作为\gls{MLP}层的输入。
+\begin{figure}[h]
 \begin{center}
 \includegraphics[width=5.6in]{figures/infer_sent.png}
 \caption{InferSent网络结构}
@@ -2506,7 +2520,7 @@ InferSent 网络最初提出的时候，并不是用来解决NLI问题的，只�
 \end{center}
 \end{figure}
 \subsection{ABCNN}
-ABCNN 是基于\gls{CNN}和注意力结合的算法，作者基于\gls{CNN}双塔孪生结构进行注意力改造提出了三种改造方法：$ABCNN-1$，卷积前注意力方案；$ABCNN-2$，卷积后注意力加权方案和$ABCNN-3$，卷积前注意力和卷积后注意力加权结合方案。
+ABCNN 是基于\gls{CNN}和注意力结合的算法，作者基于\gls{CNN}双塔孪生结构进行注意力改造提出了三种改造方法：$ABCNN-1$，卷积前注意力方案；$ABCNN-2$，卷积后注意力加权方案；$ABCNN-3$，卷积前注意力和卷积后注意力加权结合方案。
 
 在我们介绍每个网络的特点之前，需要先介绍一下本文使用的Attention 方案，假定存在两个句子的向量表示$P=[p_1,p2,\cdots,p_n]$和$H=[h_1,h2,\cdots,h_n]$，那么他们的互相注意力矩阵$A=\{a_{i,j}|i,j=1,2,\cdots,n\}$按照如下方式计算:
 $$
@@ -2538,8 +2552,8 @@ $$
 $$
 \beta_j=\sum_{i}a_{i,j}
 $$
-模型会将卷积的结果乘上对应句子的权重，之后进行均值池化, 作为下一层的输入。
-\begin{figure}[htbp]
+模型会将卷积的结果乘上对应句子的权重，之后进行均值池化, 作为下一层的输入。网络的记过如图\ref{fig:abcnn2}所示。
+\begin{figure}[h]
 \begin{center}
 \includegraphics[width=6.0in]{figures/abcnn2.png}
 \caption{卷积前注意力方案ABCNN-2}
@@ -2548,7 +2562,7 @@ $$
 \end{figure}
 
 \subsubsection{卷积前注意力和卷积后注意力加权结合方案}
-\begin{figure}[htp]
+\begin{figure}[h]
 	\begin{center}
 		\includegraphics[width=6.0in]{figures/abcnn3.png}
 		\caption{卷积前后同时注意力方案ABCNN-3}
@@ -2557,10 +2571,10 @@ $$
 \end{figure}
 相比之前的两张网络，ABCNN-3同步在卷积输入前和输入后都引入了注意力机制，是综合前两个网络的优势的一种组合方案。
 
-ABCNN是基于\gls{CNN}的注意力模型，由于\gls{CNN}是空间计算，没有时间上的依赖，因此表现出比较强的并行加速优势。ABCNN的效果不如后面会讲到的ESIM网络，不过其速度是明显更快的。
+ABCNN是基于\gls{CNN}的注意力模型，由于\gls{CNN}是空间计算，没有时间上的依赖，因此表现出比较强的并行加速优势。ABCNN的效果不如后面会讲到的ESIM网络，不过其速度是明显更快的。网络的记过如图\ref{fig:abcnn3}所示。
 
 \subsection{ESIM-增强LSTM模型}
-\begin{figure}[htbp]
+\begin{figure}[h]
 \begin{center}
 \includegraphics[width=5.6in]{figures/esim1.png}
 \caption{ESIM网络结构}
@@ -2600,7 +2614,7 @@ $v_a$和$v_b$经过一些pooling操作和拼接之后得到最终的语意表示
 $$
 v=[v_{a,avg};v_{a,max};v_{b,avg};v_{b,max}]
 $$
-最后经过若干层MLP之后，就可以构建分类损失了。
+最后经过若干层\gls{MLP}之后，就可以构建分类损失了。
 
 句对分类技术还有很多其他的算法，不过目前看ESIM 算法是效果最好的。ESIM 算法最早用来解决自然语言推理问题，但是该网络在判断句子对语意相关性上也有比较强的应用前景， 我们在后续章节中会详细介绍语意搜索相关的课题。
 
@@ -2664,7 +2678,7 @@ $$
 
 在训练下游任务的时候，会把双向语言模型中各个循环神经网络的隐层输入$\{[\overleftarrow{ H_{l}},\overrightarrow{ H_{l}}]|l=1,2,\cdots,L\}$和语言模型输入的Embedding矩阵$X$组合起来计算一个向量序列作为词的上下文表示。可以有多种使用方法，例如直接线性加权或者只取最上层的输出。ELMo在问答、自然语言推理、命名实体识别和文本分类等诸多数据集上刷新了当时的最高水平，展现出非常高的实用价值。
 
-\section{BE+RT}
+\section{BERT}
 近几年最能代表自然语言处理技术的水平的非\gls{BERT}莫属，\gls{BERT}是一种双向语言模型，\gls{BERT}使用了Transformer 翻译模型的编码端，我们来详细介绍这个编码端的结构。
 
 \gls{BERT}弃用了\gls{RNN}，因此无法建模句子的位置信息，\gls{BERT}引入了位置编码，具体来讲就是给每个位置随机生成一个可训练的向量$P_i$，然后和词向量$W_i$加在一起作为模型的输入。
@@ -2831,7 +2845,7 @@ class BertModel:
 \label{fig:bert2}
 \end{center}
 \end{figure}
-\begin{figure}[htbp]
+\begin{figure}[h]
 	\begin{center}
 		\includegraphics[width=3.5in]{figures/bert3.png}
 		\caption{\gls{BERT}预训练网络结构}
@@ -2863,9 +2877,9 @@ class BertModel:
 	\end{figure}
 
 \section{MTDNN}
-在\gls{BERT}出现后，微软公司的一些研究者提出了基于Transformer编码器作为特征表示的多任务预训练模型--MTDNN。与\gls{BERT}类似，MTDNN使用多层Transformer模块堆叠作为文本特征提取网络，希望能够借助注意力机制得到更好的文本表示。与\gls{BERT}不同的是，MTDNN在构建预训练任务的时候，不是使用掩码语言模型，而是非常暴力的使用很多任务。在微软公司的研究者看来，计算机应该像人一样能把一个任务学习到的任务应用到另一个任务中。我把这种生物认知现象称为认知迁移，微软的研究人员希望模型能够捕捉到认知迁移的内在规律在自然语言处理中的表现形式。如图所示MTDNN接入了四种任务。 这四个任务分别是单文本分类任务、文本相似度任务、句子对文本分类任务和语意相关性搜索任务。MTDNN 的输入和\gls{BERT} 是一样的，每个句子的输入都会增加一个起始符号[CLS]，如果输入是一个句子对那么两个句子用[SEP]这个特殊符号分割，假定文本输入的输出为$l_2$。
+在\gls{BERT}出现后，微软公司的一些研究者提出了基于Transformer编码器作为特征表示的多任务预训练模型--\gls{MTDNN}。与\gls{BERT}类似，\gls{MTDNN}使用多层Transformer模块堆叠作为文本特征提取网络，希望能够借助注意力机制得到更好的文本表示。与\gls{BERT}不同的是，\gls{MTDNN}在构建预训练任务的时候，不是使用掩码语言模型，而是非常暴力的使用很多任务。在微软公司的研究者看来，计算机应该像人一样能把一个任务学习到的任务应用到另一个任务中。我把这种生物认知现象称为认知迁移，微软的研究人员希望模型能够捕捉到认知迁移的内在规律在自然语言处理中的表现形式。如图所示\gls{MTDNN}接入了四种任务。 这四个任务分别是单文本分类任务、文本相似度任务、句子对文本分类任务和语意相关性搜索任务。\gls{MTDNN} 的输入和\gls{BERT} 是一样的，每个句子的输入都会增加一个起始符号[CLS]，如果输入是一个句子对那么两个句子用[SEP]这个特殊符号分割，假定文本输入的输出为$l_2$。
 \begin{example}
-假如输入是"我是一个自然语言处理工程师"这一个句子，那么MTDNN的输入是"[CLS]我是一个自然语言处理工程师";假如输入是"我是一个自然语言处理工程师"和"我热爱自然语言处理"，那么MTDNN的输入就是"[CLS]我是一个自然语言处理工程师[SEP]我热爱自然语言处理"。
+假如输入是"我是一个自然语言处理工程师"这一个句子，那么\gls{MTDNN}的输入是"[CLS]我是一个自然语言处理工程师";假如输入是"我是一个自然语言处理工程师"和"我热爱自然语言处理"，那么\gls{MTDNN}的输入就是"[CLS]我是一个自然语言处理工程师[SEP]我热爱自然语言处理"。
 \end{example}
 \begin{figure}[htbp]
 \begin{center}
@@ -2880,25 +2894,25 @@ class BertModel:
 $$
 P_{SST}(c|X)= softmax(XW_{SST})
 $$
-在MTDNN中采用了交叉熵损失作为优化目标，对于其中的一个样本:
+在\gls{MTDNN}中采用了交叉熵损失作为优化目标，对于其中的一个样本:
 $$
 L_{SST}=-\sum_{c}I(X,c)log(P_{SST}(c|X))
 $$。
 \subsection{句子对分类任务}
-我们前面章节讲过句子对分类任务，MTDNN的模型在构建句对分类损失的时候使用了\gls{SAN} 网络的回答模块来构造文本的语意表示，这方面的内容比较复杂，具体请参考后续章节中，讲机器阅读理解的章节。不过在构造损失函数的时候，MTDNN模型的处理方式与单文本分类没有区别。
+我们前面章节讲过句子对分类任务，\gls{MTDNN}的模型在构建句对分类损失的时候使用了\gls{SAN} 网络的回答模块来构造文本的语意表示，这方面的内容比较复杂，具体请参考后续章节中，讲机器阅读理解的章节。不过在构造损失函数的时候，\gls{MTDNN}模型的处理方式与单文本分类没有区别。
 
 \subsection{文本相似度任务}
 假定$X$是文本上下文序列编码$l_2$的第一个字符[CLS]的文本编码，那么我们将$X$视作是句子对$[X_1;X_2]$的语意编码，我们定义这两个句子对的相似度为：
 $$
 sim(X_1,X_2) = XW_{STS}
 $$
-在MTDNN中采用了均方误差作为优化目标，对于其中的一个样本：
+在\gls{MTDNN}中采用了均方误差作为优化目标，对于其中的一个样本：
 $$
 L_{STS}=(y-sim(X_1,X_2))^2
 $$
 \subsection{语意相关性搜索任务}
 
-MTDNN通过对QNLI任务的正样本做了一个负采样，将其构建成了一个语意相关性排序的任务，其中查询句$Q$和回答句$A$的相关性得分为:
+\gls{MTDNN}通过对QNLI任务的正样本做了一个负采样，将其构建成了一个语意相关性排序的任务，其中查询句$Q$和回答句$A$的相关性得分为:
 $$
 Rel(Q,A) = g(XW^T_{QNLI})
 $$
@@ -2911,9 +2925,9 @@ P(A^+|Q) &= \frac{exp(Rel(Q,A^+)}{\sum_{A}exp(Rel(Q,A))}
 $$
 其中$A^+$表示正样本。
 
-MTDNN的训练流程是比较直接的，Transformer层采用\gls{BERT}预训练的参数来初始化自己的参数；在构造特征的阶段四个任务分别组成各自的batch：$B_{SST}, B_{STS}, B_{QNLI}, B_{SP}$，之后将其合并成一个大的batch：$B = shuffle([B_{SST}, B_{STS}, B_{QNLI}, B_{SP}])$。在计算损失阶段，根据任务数据计算不同的损失后，将这些结果加起来就是最后的损失。最后需要强调一下，这些任务的共享了Transformer部分的参数。
+\gls{MTDNN}的训练流程是比较直接的，Transformer层采用\gls{BERT}预训练的参数来初始化自己的参数；在构造特征的阶段四个任务分别组成各自的batch：$B_{SST}, B_{STS}, B_{QNLI}, B_{SP}$，之后将其合并成一个大的batch：$B = shuffle([B_{SST}, B_{STS}, B_{QNLI}, B_{SP}])$。在计算损失阶段，根据任务数据计算不同的损失后，将这些结果加起来就是最后的损失。最后需要强调一下，这些任务的共享了Transformer部分的参数。
 \subsection{总结}
-目前看\gls{BERT}依然吸引了绝大部分研究和应用的目光，MTDNN 原始论文中使用的是GLUE数据集，其实很多语言的GLUE数据集并不完整，例如中文的GLUE数据集就没有英文完整，所以也限制了MTDNN的应用范围。另外MTDNN相对\gls{BERT}的提升并没有表现出绝对优势，后来Facebook的研究人员对\gls{BERT}稍加改动之后，又反超了MTDNN。我个人的建议是，读者可以把MTDNN当成一种学习和参考的思路，不大建议投入过多的研究或者尝试将其引入到工业应用中来。
+目前看\gls{BERT}依然吸引了绝大部分研究和应用的目光，\gls{MTDNN} 原始论文中使用的是GLUE数据集，其实很多语言的GLUE数据集并不完整，例如中文的GLUE数据集就没有英文完整，所以也限制了\gls{MTDNN}的应用范围。另外\gls{MTDNN}相对\gls{BERT}的提升并没有表现出绝对优势，后来Facebook的研究人员对\gls{BERT}稍加改动之后，又反超了\gls{MTDNN}。我个人的建议是，读者可以把\gls{MTDNN}当成一种学习和参考的思路，不大建议投入过多的研究或者尝试将其引入到工业应用中来。
 
 \section{精简BERT模型ALBERT}
 近些年来，预训练语言模型的参数量越来越大，BERT-Base目前的参数量已经超过100M，因此训练代价和使用代价也越来越大。ALBERT就应运而生了，ALBERT 要解决的第一个问题就是参数量问题，解决的办法主要有两方面：一方面通过矩阵分解的方法来降低embedding矩阵的大小；另一方面是使用跨层参数共享的方法来降低隐藏层的参数量。
@@ -3577,6 +3591,70 @@ $$
 \end{center}
 \end{figure}
 神经网络机器翻译就是希望能够通过神经网络技术实现不同历史演变的语言之间的自动转换，例如汉语和英语的自动翻译就是表象文字和表音文字的自动转换。实际上，不同的语言是对语义的不同表达形式，我们可以认为语言是语义的一种表示。机器翻译首先希望能够透过语言的表达形式找到语义的数学表达，然后利用语义的数学表达来解码出不同的语言形式，前者被称为编码器后者为成为解码器。
+在介绍机器翻译的编解码器框架之前我们先介绍一下机器翻译的评价指标——BLUE。
+\section{翻译评价指标-BLUE}
+评价机器翻译的质量一直是备受关注的课题，上世纪90年代国际语言工程标准(ISLE)计划就专门设立过EWG机器翻译评测工作组，目前最为流程的自动翻译评价工具是IBM公司提出的BLUE。BLUE是一种基于n-gram的机器翻译自动评价指标，为了说明n-gram匹配规则我们先举一个例子，如表\ref{tab:n-gram_match}所示。
+\begin{table}[h]
+	\caption{n-gram匹配规则实例}\label{tab:n-gram_match}  
+	\centering
+\begin{tabular}{l|l}
+	\hline
+	\hline
+	原文& 今天天气不错 \\
+	\hline
+	机器翻译结果& it is a good day today \\
+	\hline
+	人工翻译结果& today is a good day \\
+	\hline
+\end{tabular}
+\end{table}
+我开考察1-gram的匹配，可以看到机器翻译和人工翻译相比有5个相同的词——is、a、day、good和today，因此1-gram匹配次数为5。由于机器译文总共有6个词，因此1-gram的规则匹配度为5/6。我们在来看2-gram的匹配度，如图\ref{fig:blue1}所示，可以看到2-gram匹配次数为3，因此2-gram的规则匹配度为3/6。一般来说1-gram表示多少词被翻译出来了，因此反映的是翻译的忠诚度；2-gram更多的是表现翻译结果的流畅性。
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=5.0in]{figures/blue1.png}
+		\caption{2-gram匹配规则}
+		\label{fig:blue1}
+	\end{center}
+\end{figure}
+\subsection{文本块修正的n-gram精度}
+假定评测集对应的译文集为$C=\{c_i|i=1,2,\cdots,|C|\}$，为了方便我们把参考译文集记为$S=\{s_{i}|i=1,2,\cdots,|C|;j=1,2,\cdots,m\}$，$m$表示这个一个译文对应的参考译文的数量。另外我们假定一个参考译文$s_{i,j}$的n-gram集合为$G_{i,j}$，对于其中的一个元素$w_{i}^{n}\in G_{i,j}$，我们定义$h(c_i,w_{i}^{n})$为$w_{i}^{n}$这个n-gram出现在$c_i$这个句子中的统计次数；另外定义$h(s_{i,j},w_{i}^{n})$为$w_{i}^{n}$这个n-gram出现在$s_{i,j}$这个句子中的统计次数。我们可以得到“文本块修正的n-gram精度”：
+$$
+p_{n,i}=\frac{
+	\sum_{j=1}^{m}{
+		\sum_{w_i^{n}\in G_i}{
+			min(h(c_{i},w_{i}^{n}),h(s_{i,j},w_{i}^{n}))
+		}
+	}
+}{
+	\sum_{j=1}^{m}{
+		\sum_{w_i^{n}\in G_i}{
+			h(s_{i,j},w_{i}^{n})
+		}
+	}
+}
+$$
+\subsection{长度惩罚因子}
+如果仅仅使用文本块修正的n-gram精度来衡量翻译的质量，那么如果一个翻译模型仅仅准确翻译出了若干词汇，其得分依然会比较高。例如$c_i$仅仅精准的翻译前$50\%$的词，$p_{n,i}$可以到约$0.5$，这是不合理的。为此BLUE值引入了长度惩罚因子，对于较短的译文进行惩罚。假定一个句子的长度为$\iota(\cdot)$，那么长度惩罚因子$\rho_{i,j}$为
+$$\rho_{i,j}=
+	\left\{
+		\begin{array}{lr}
+			1&\iota(c_i)>\iota(s_{i,j})\\
+			e^{(1-\iota(s_{i,j})/\iota(c_i))}&\iota(c_i) \le \iota(s_{i,j})
+		\end{array}
+	\right.
+$$
+\subsection{BLUE计算公式}
+假定我们仅仅考虑$\{1\-gram,2\-gram,\cdots N\-gram\}$，对于一个译文$c_i$的BLUE值为：
+$$
+BLUE(i)=\frac{\sum_{j=1}^{m}{(\rho_{i,j})}
+			 }{m}exp\left (\sum_{n=1}^{N}{\frac{1}{N}(p_{n,i})}\right )
+$$
+整个评测集的BLUE值可以用每个翻译对应BLUE值的平均值来计算：
+$$
+BLUE=\frac{1}{|C|}\sum_{i=1}^{|C|}{BLUE(i)}
+$$
+
+
 \section{编码器解码器框架}
 神经网络机器翻译通常是使用监督学习的方式训练的。其训练语料一般被称为平行语料，一个平行语料的样本通常包含两个句子，分别被称为源语句和目标语句，的源语句和目标语句的语义相同。编码器解码器框架的基本思想是把平行语料的源语句的的合理数学表示提取出来，然后利用提取出来的源语句的合理表示，构建目标语句。假定源语句为$S=[s_1,s_2,\cdots,s_n,[EOS]]$，目标语句为$D=[[SOS],d_1,d_2,\cdots,d_m]$。一般来说，源语句的最后一个字符是一个特殊符号，标志句子结束；目标语句的第一个字符也是一个特殊符号，标志解码开始。
 
@@ -3936,7 +4014,7 @@ $A=\mathcal{F}(C,Q)$。
 自由问答的上下文假定为$C$，上下文相关的问题为$Q$，自由问答任务就是根据上下文和相关问题构造一个上下文相关问题的正确答案$A=\mathcal{F}(C,Q)$，其中答案可能是上下文中的一个连续子序列也可能不是。
 \end{definition}
 \section{机器阅读理解的解决框架}
-用人工神经网络来解决机器阅读理解的框架一般分为四个主要的模块：输入Embedding、特征抽取、问题和上下文交互以及答案预测。其中输入Embedding用于文本的向量化，常用的手段有随机词向量、预训练静态词向量、预训练动态词向量和多维度知识增强等手段。一般来说，由于预训练技术能够引入大语料中的信息，预训练静态词向量技术已经基本上替代了随机词向量技术；如果计算能力比较充足，预训练动态词向量可以在静态词向量的基础上引入词向量的上下文信息，从而提升模型的表现；另外一些额外的知识如问句或者上下文中的实体和文本领域等知识也可以通过输入Embedding技术引入输入词向量从而增强模型的信息，提高其表现。与其他自然语言处理技术一样，机器阅读理解的特征抽取常用的技术主要分为三类：循环神经网络（\gls{RNN}）、卷积神经网络（\gls{CNN}）和多层自注意力网络（\gls{SAN}）。由于我们已经在前面的章节中反复介绍过如何通过上述三种技术来构建文本特征，所以这里就重复介绍了。机器阅读理解区别于其他自然语言处理任务的关键在于其问题和上下文交互模块和答案预测模块。
+用人工神经网络来解决机器阅读理解的框架（见图\ref{fig:mrc}）一般分为四个主要的模块：输入Embedding、特征抽取、问题和上下文交互以及答案预测。其中输入Embedding用于文本的向量化，常用的手段有随机词向量、预训练静态词向量、预训练动态词向量和多维度知识增强等手段。一般来说，由于预训练技术能够引入大语料中的信息，预训练静态词向量技术已经基本上替代了随机词向量技术；如果计算能力比较充足，预训练动态词向量可以在静态词向量的基础上引入词向量的上下文信息，从而提升模型的表现；另外一些额外的知识如问句或者上下文中的实体和文本领域等知识也可以通过输入Embedding技术引入输入词向量从而增强模型的信息，提高其表现。与其他自然语言处理技术一样，机器阅读理解的特征抽取常用的技术主要分为三类：循环神经网络（\gls{RNN}）、卷积神经网络（\gls{CNN}）和多层自注意力网络（\gls{SAN}）。由于我们已经在前面的章节中反复介绍过如何通过上述三种技术来构建文本特征，所以这里就重复介绍了。机器阅读理解区别于其他自然语言处理任务的关键在于其问题和上下文交互模块和答案预测模块。
 为了方便我们记上下文特征为$C=[C_1,C_2,\cdots,C_n]$和问题特征为$Q=[Q_1,Q_2,\cdots,Q_m]$。
 \begin{figure}[htbp]
 \begin{center}
@@ -3954,7 +4032,7 @@ $A=\mathcal{F}(C,Q)$。
 \label{fig:mrc_att1}
 \end{center}
 \end{figure}
-在机器阅读理解中上下文和问题交互模块通常会使用到注意力机制，根据注意力机制可以分为单向注意力和双向注意力机制。其中单向注意力机制通常是问题到上下文的Attention，从而找到上下文中对问题有用的部分。假定问题特征向量$Q$和上下文的一个语义片段$\{C_i|i=1,2,\cdots,n\}$的相似性为$S_i=f(Q,C_i)$。如图所示，对于问题来说上下文每个语义片段对于其的重要程度可以通过下面的式子表示：
+在机器阅读理解中上下文和问题交互模块通常会使用到注意力机制，根据注意力机制可以分为单向注意力和双向注意力机制。其中单向注意力机制通常是问题到上下文的Attention，从而找到上下文中对问题有用的部分。假定问题特征向量$Q$和上下文的一个语义片段$\{C_i|i=1,2,\cdots,n\}$的相似性为$S_i=f(Q,C_i)$。如图\ref{fig:mrc_att1}所示，对于问题来说上下文每个语义片段对于其的重要程度可以通过下面的式子表示：
 $$
 \alpha_{i}=\frac{exp(S_i)}{\sum_{j}(S_j)}
 $$
@@ -3962,10 +4040,10 @@ $$
 \begin{figure}[htbp]
 \begin{center}
 \includegraphics[width=5.4in]{figures/mrc_att2.png}
-\caption{机器阅读理解的双向注意力} \label{fig:mrc_att1}
+\caption{机器阅读理解的双向注意力} \label{fig:mrc_att2}
 \end{center}
 \end{figure}
-双向注意力机制是为了建模问题到上下文的交互的同时，建模上下文到问题的交互。如图所示这种注意力机制首先会计算问题语义片段$Q_i$和上下文语义片段$C_j$的相似性矩阵$M=\{M_{i,j}|i=1,2,\cdots,n;j=1,2,\cdots,m\}$，其中$M_{i,j}=f(Q_i,C_j)$。然后按照行和按照列求相互的权重——$\alpha=[\alpha_1,\alpha_2,\cdots,\alpha_n]$和$\beta=[\beta_1,\beta_2,\cdots,\beta_m]$。
+双向注意力机制是为了建模问题到上下文的交互的同时，建模上下文到问题的交互。如图\ref{fig:mrc_att2}所示这种注意力机制首先会计算问题语义片段$Q_i$和上下文语义片段$C_j$的相似性矩阵$M=\{M_{i,j}|i=1,2,\cdots,n;j=1,2,\cdots,m\}$，其中$M_{i,j}=f(Q_i,C_j)$。然后按照行和按照列求相互的权重——$\alpha=[\alpha_1,\alpha_2,\cdots,\alpha_n]$和$\beta=[\beta_1,\beta_2,\cdots,\beta_m]$。
 根据权重我们可以得到交互上下文特征和交互问题特征:
 $$
 \begin{aligned}
@@ -4009,11 +4087,11 @@ $$
 \cite{Moody2016Mixing,2019Hierarchically,2016Attention},
 \cite{Liu2016Attention},
 \cite{peters-etal-2018-deep},
-\cite{2016Pairwise},
-\cite{Talman2019Sentence},
+\cite{2016Pairwise,inproceedings},
+\cite{Talman2019Sentence,2001Greedy},
 \cite{zhang2015character-level},
 \cite{yang2016hierarchical}
-,\cite{joulin2017bag,lai2015recurrent,hochreiter1997long,Pennington2014Glove,2017Fixing,2018Slot,1997Long,wang2018glue,dauphin2016language,mikolov2010recurrent},
+\cite{joulin2017bag,lai2015recurrent,hochreiter1997long,Pennington2014Glove,2017Fixing,2018Slot,1997Long,wang2018glue,dauphin2016language,mikolov2010recurrent},
 \cite{radford2019language,vaswani2017attention,strubell2017fast,huang2015bidirectional,devlin2018bert,chen2017enhanced,yin2016abcnn,humeau2019poly-encoders},
 \cite{mikolov2013efficient,sutskever2014sequence,chen2016xgboost,suykens2001support,akhtar2019textrank,blei2003latent,bengio2003a,kim2014convolutional}
 \cite{bahdanau2014neural,ID_lihang,ID_zhouzhihua,2018A,Baradaran2020A,2016Bidirectional}
@@ -4022,9 +4100,14 @@ $$
 \cite{inproceedings,chang2008bigtable}
 \cite{shi2010list-wise,shen2014a,Kiefel_underreview,chang2020pre-training}
 \cite{li2018survey,joachims2002optimizing}
-\cite{peters-etal-2018-deep}\cite{2016Pairwise}\cite{zhang2015character-level}\cite{yang2016hierarchical}\cite{Talman2019Sentence,chen2017enhanced}，
-\cite{kingma2014adam}，
-\cite{10.5555/3086952,dai2019transformer-xl}
+\cite{peters-etal-2018-deep}
+\cite{2016Pairwise,2017A,2018Investigating,2017Deep1}
+\cite{zhang2015character-level,2003A,2012A}
+\cite{yang2016hierarchical,2020ERNIE}
+\cite{Talman2019Sentence,chen2017enhanced,Krizhevsky2012ImageNet}，
+\cite{kingma2014adam,Hinton2014A,Rumelhart1986Learning,2019RoBERTa}，
+\cite{10.5555/3086952,dai2019transformer-xl,2017Focal,IDPatternrecognition,IDMTBook,IDCNLP,Lecun2015Deep}
+
 \bibliographystyle{unsrt}  
 \bibliography{example}
 \end{document}

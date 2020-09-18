@@ -38,10 +38,20 @@ Hua He and Jimmy~J Lin.
 \newblock In {\em Conference of the North American Chapter of the Association
   for Computational Linguistics: Human Language Technologies}, 2016.
 
+\bibitem{inproceedings}
+Jeffrey Dean and Sanjay Ghemawat.
+\newblock Mapreduce: Simplified data processing on large clusters.
+\newblock volume~51, pages 137--150, 01 2004.
+
 \bibitem{Talman2019Sentence}
 Aarne Talman, Anssi Yli-Jyra, and Joerg Tiedemann.
 \newblock Sentence embeddings in nli with iterative refinement encoders.
 \newblock {\em Natural Language Engineering}, 25(PT.4):467--482, 2019.
+
+\bibitem{2001Greedy}
+Jerome~H. Friedman.
+\newblock Greedy function approximation: A gradient boosting machine.
+\newblock {\em Annals of Statistics}, 29(5):1189--1232, 2001.
 
 \bibitem{zhang2015character-level}
 Xiang Zhang, Junbo Zhao, and Yann Lecun.
@@ -303,11 +313,6 @@ Jonas Gehring, Michael Auli, David Grangier, Denis Yarats, and Yann~N Dauphin.
 \newblock Convolutional sequence to sequence learning.
 \newblock {\em arXiv: Computation and Language}, 2017.
 
-\bibitem{inproceedings}
-Jeffrey Dean and Sanjay Ghemawat.
-\newblock Mapreduce: Simplified data processing on large clusters.
-\newblock volume~51, pages 137--150, 01 2004.
-
 \bibitem{chang2008bigtable}
 Fay~W Chang, Jeffrey Dean, Sanjay Ghemawat, Wilson~C Hsieh, Deborah~A Wallach,
   Michael Burrows, Tushar~Deepak Chandra, Andrew Fikes, and Robert Gruber.
@@ -345,10 +350,66 @@ Thorsten Joachims.
 \newblock Optimizing search engines using clickthrough data.
 \newblock pages 133--142, 2002.
 
+\bibitem{2017A}
+Hongshen Chen, Xiaorui Liu, Dawei Yin, and Jiliang Tang.
+\newblock A survey on dialogue systems: Recent advances and new frontiers.
+\newblock {\em Acm Sigkdd Explorations Newsletter}, 19(2):25--35, 2017.
+
+\bibitem{2018Investigating}
+Wei Zhao, Jianbo Ye, Min Yang, Zeyang Lei, Suofei Zhang, and Zhou Zhao.
+\newblock Investigating capsule networks with dynamic routing for text
+  classification.
+\newblock 2018.
+
+\bibitem{2017Deep1}
+Rie Johnson and Tong Zhang.
+\newblock Deep pyramid convolutional neural networks for text categorization.
+\newblock In {\em Proceedings of the 55th Annual Meeting of the Association for
+  Computational Linguistics (Volume 1: Long Papers)}, 2017.
+
+\bibitem{2003A}
+Xing Yong-Kang.
+\newblock A survey on statistical language models.
+\newblock {\em Computer ence}, 2003.
+
+\bibitem{2012A}
+Fuxing Cheng, Xin Zhang, Ben He, Tiejian Luo, and Wenjie Wang.
+\newblock A survey of learning to rank for real-time twitter search.
+\newblock In {\em Joint International Conference on Pervasive Computing and the
+  Networked World}, 2012.
+
+\bibitem{2020ERNIE}
+Yu~Sun, Shuohuan Wang, Yukun Li, Shikun Feng, and Haifeng Wang.
+\newblock Ernie 2.0: A continual pre-training framework for language
+  understanding.
+\newblock {\em Proceedings of the AAAI Conference on Artificial Intelligence},
+  34(5):8968--8975, 2020.
+
+\bibitem{Krizhevsky2012ImageNet}
+Alex Krizhevsky, I.~Sutskever, and G.~Hinton.
+\newblock Imagenet classification with deep convolutional neural networks.
+\newblock 2012.
+
 \bibitem{kingma2014adam}
 Diederik~P Kingma and Jimmy Ba.
 \newblock Adam: A method for stochastic optimization.
 \newblock {\em arXiv: Learning}, 2014.
+
+\bibitem{Hinton2014A}
+Geoffrey~E. Hinton, Simon Osindero, and Yee-Whye Teh.
+\newblock A fast learning algorithm for deep belief nets.
+\newblock {\em Neural Computation}, 18(7):1527--1554, 2014.
+
+\bibitem{Rumelhart1986Learning}
+David~E. Rumelhart, Geoffrey~E. Hinton, and Ronald~J. Williams.
+\newblock Learning representations by back-propagating errors.
+\newblock {\em Nature}, 323(6088):533--536, 1986.
+
+\bibitem{2019RoBERTa}
+Yinhan Liu, Myle Ott, Naman Goyal, Jingfei Du, Mandar Joshi, Danqi Chen, Omer
+  Levy, Mike Lewis, Luke Zettlemoyer, and Veselin Stoyanov.
+\newblock Roberta: A robustly optimized bert pretraining approach.
+\newblock 2019.
 
 \bibitem{10.5555/3086952}
 Ian Goodfellow, Yoshua Bengio, and Aaron Courville.
@@ -361,5 +422,28 @@ Zihang Dai, Zhilin Yang, Yiming Yang, Jaime~G Carbonell, Quoc~V Le, and Ruslan
 \newblock Transformer-xl: Attentive language models beyond a fixed-length
   context.
 \newblock {\em arXiv: Learning}, 2019.
+
+\bibitem{2017Focal}
+Tsung~Yi Lin, Priya Goyal, Ross Girshick, Kaiming He, and Piotr Dollár.
+\newblock Focal loss for dense object detection.
+\newblock {\em IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  PP(99):2999--3007, 2017.
+
+\bibitem{IDPatternrecognition}
+Bernd Radig.
+\newblock {\em 模式识别 Patternrecognition}.
+
+\bibitem{IDMTBook}
+肖桐 (Tong Xiao) 朱靖波~(Jingbo Zhu).
+\newblock {\em 机器翻译：统计建模与深度学习方法}.
+
+\bibitem{IDCNLP}
+王晓龙.
+\newblock {\em 计算机自然语言处理}.
+
+\bibitem{Lecun2015Deep}
+Yann Lecun, Yoshua Bengio, and Geoffrey Hinton.
+\newblock Deep learning.
+\newblock {\em Nature}, 521(7553):436--444, 2015.
 
 \end{thebibliography}
