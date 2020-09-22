@@ -1,5 +1,5 @@
 \contentsline {chapter}{关于作者}{III}{Doc-Start}%
-\contentsline {chapter}{前\hskip 2em\relax 言}{1}{section*.5}%
+\contentsline {chapter}{前\hskip 2em\relax 言}{1}{section*.7}%
 \contentsline {chapter}{\numberline {第1章} 绪论 }{3}{chapter.1}%
 \contentsline {chapter}{\numberline {第2章} 自然语言处理技术的发展历史 }{7}{chapter.2}%
 \contentsline {section}{\numberline {2.1}自然语言理解的发展}{8}{section.2.1}%
@@ -31,148 +31,153 @@
 \contentsline {subsubsection}{\numberline {3.1.5.1}分类损失}{30}{subsubsection.3.1.5.1}%
 \contentsline {subsubsection}{\numberline {3.1.5.2}回归损失}{31}{subsubsection.3.1.5.2}%
 \contentsline {subsubsection}{\numberline {3.1.5.3}排序损失}{32}{subsubsection.3.1.5.3}%
+\contentsline {subsubsection}{\numberline {3.1.5.4}Focal Loss}{33}{subsubsection.3.1.5.4}%
 \contentsline {section}{\numberline {3.2}优化器介绍}{33}{section.3.2}%
 \contentsline {subsection}{\numberline {3.2.1}标准优化器}{33}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}自适应学习率优化器}{33}{subsection.3.2.2}%
-\contentsline {subsubsection}{\numberline {3.2.2.1}Adagrad}{33}{subsubsection.3.2.2.1}%
-\contentsline {subsubsection}{\numberline {3.2.2.2}RMSProp}{34}{subsubsection.3.2.2.2}%
+\contentsline {subsection}{\numberline {3.2.2}自适应学习率优化器}{34}{subsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.2.1}Adagrad}{34}{subsubsection.3.2.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2.2}RMSProp}{35}{subsubsection.3.2.2.2}%
 \contentsline {subsection}{\numberline {3.2.3}基于动量的优化器}{35}{subsection.3.2.3}%
-\contentsline {subsection}{\numberline {3.2.4}Adam}{35}{subsection.3.2.4}%
+\contentsline {subsection}{\numberline {3.2.4}Adam}{36}{subsection.3.2.4}%
 \contentsline {section}{\numberline {3.3}防止过拟合相关技术}{36}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}dropout 技术}{36}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}早停止技术}{36}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.1}dropout 技术}{37}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}早停止技术}{37}{subsection.3.3.2}%
 \contentsline {subsubsection}{\numberline {3.3.2.1}泛化错误法}{37}{subsubsection.3.3.2.1}%
-\contentsline {subsubsection}{\numberline {3.3.2.2}泛化损失法}{37}{subsubsection.3.3.2.2}%
-\contentsline {subsection}{\numberline {3.3.3}正则化和权重衰减}{37}{subsection.3.3.3}%
-\contentsline {chapter}{\numberline {第4章} 分词和词向量 }{39}{chapter.4}%
-\contentsline {section}{\numberline {4.1}词表最长匹配法}{39}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}前向匹配}{39}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}后向匹配和双向匹配算法}{40}{subsection.4.1.2}%
-\contentsline {section}{\numberline {4.2}概率法}{40}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}基于隐马尔可夫过程的分词法}{40}{subsection.4.2.1}%
-\contentsline {subsubsection}{\numberline {4.2.1.1}隐马尔可夫过程}{41}{subsubsection.4.2.1.1}%
-\contentsline {subsubsection}{\numberline {4.2.1.2}隐马尔可夫过程分词}{49}{subsubsection.4.2.1.2}%
-\contentsline {section}{\numberline {4.3}Subword 技术}{50}{section.4.3}%
-\contentsline {section}{\numberline {4.4}词向量}{51}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}CBOW}{52}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Skip-gram}{54}{subsection.4.4.2}%
-\contentsline {subsection}{\numberline {4.4.3}GLOVE}{56}{subsection.4.4.3}%
-\contentsline {subsection}{\numberline {4.4.4}词向量的评估方法}{59}{subsection.4.4.4}%
-\contentsline {chapter}{\numberline {第5章} 语言模型 }{61}{chapter.5}%
-\contentsline {section}{\numberline {5.1}语言模型的定义和句子通顺度评估}{61}{section.5.1}%
-\contentsline {section}{\numberline {5.2}前馈神经网络语言模型}{61}{section.5.2}%
-\contentsline {section}{\numberline {5.3}循环神经网络语言模型}{63}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}循环神经网络}{63}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}循环神经网络语言模型}{66}{subsection.5.3.2}%
-\contentsline {subsubsection}{\numberline {5.3.2.1}循环神经网络的两种训练模式}{67}{subsubsection.5.3.2.1}%
-\contentsline {subsubsection}{\numberline {5.3.2.2}循环神经网络语言模型的模型细节}{68}{subsubsection.5.3.2.2}%
-\contentsline {section}{\numberline {5.4}卷积神经网络语言模型}{69}{section.5.4}%
-\contentsline {subsection}{\numberline {5.4.1}卷积神经网络}{69}{subsection.5.4.1}%
-\contentsline {subsection}{\numberline {5.4.2}门控卷积神经网络语言模型}{72}{subsection.5.4.2}%
-\contentsline {section}{\numberline {5.5}自注意力神经网络语言模型}{74}{section.5.5}%
-\contentsline {subsection}{\numberline {5.5.1}自注意力机制}{74}{subsection.5.5.1}%
-\contentsline {subsection}{\numberline {5.5.2}GPT-自注意力神经网络语言模型}{75}{subsection.5.5.2}%
-\contentsline {chapter}{\numberline {第6章} 文本分类技术 }{81}{chapter.6}%
-\contentsline {section}{\numberline {6.1}二分类和多分类}{81}{section.6.1}%
-\contentsline {section}{\numberline {6.2}文本分类的评价指标}{82}{section.6.2}%
-\contentsline {section}{\numberline {6.3}经典文本分类技术}{84}{section.6.3}%
-\contentsline {section}{\numberline {6.4}神经网络文本分类技术概述}{84}{section.6.4}%
-\contentsline {subsection}{\numberline {6.4.1}基于CNN的文本分类技术}{85}{subsection.6.4.1}%
-\contentsline {subsection}{\numberline {6.4.2}基于RNN的文本分类技术}{91}{subsection.6.4.2}%
-\contentsline {subsection}{\numberline {6.4.3}基于RNN和CNN结合的文本分类技术}{93}{subsection.6.4.3}%
-\contentsline {subsubsection}{\numberline {6.4.3.1}RNN-词汇表示层}{93}{subsubsection.6.4.3.1}%
-\contentsline {subsubsection}{\numberline {6.4.3.2}CNN Pooling-句子特征表示层}{94}{subsubsection.6.4.3.2}%
-\contentsline {subsection}{\numberline {6.4.4}神经网络快速文本分类技术-FastText}{96}{subsection.6.4.4}%
-\contentsline {subsection}{\numberline {6.4.5}长文本分类—HAN}{97}{subsection.6.4.5}%
-\contentsline {subsubsection}{\numberline {6.4.5.1}词编码表示}{99}{subsubsection.6.4.5.1}%
-\contentsline {subsubsection}{\numberline {6.4.5.2}句编码表示}{99}{subsubsection.6.4.5.2}%
-\contentsline {subsection}{\numberline {6.4.6}亚词汇级别文本分类-charCNN}{103}{subsection.6.4.6}%
-\contentsline {section}{\numberline {6.5}句对分类技术}{105}{section.6.5}%
-\contentsline {subsection}{\numberline {6.5.1}InferSent}{106}{subsection.6.5.1}%
-\contentsline {subsection}{\numberline {6.5.2}ABCNN}{107}{subsection.6.5.2}%
-\contentsline {subsubsection}{\numberline {6.5.2.1}卷积前注意力方案}{107}{subsubsection.6.5.2.1}%
-\contentsline {subsubsection}{\numberline {6.5.2.2}卷积后注意力方案}{108}{subsubsection.6.5.2.2}%
-\contentsline {subsubsection}{\numberline {6.5.2.3}卷积前注意力和卷积后注意力加权结合方案}{108}{subsubsection.6.5.2.3}%
-\contentsline {subsection}{\numberline {6.5.3}ESIM-增强LSTM模型}{110}{subsection.6.5.3}%
-\contentsline {chapter}{\numberline {第7章} 预训练技术 }{113}{chapter.7}%
-\contentsline {section}{\numberline {7.1}自然语言中预训练技术的发展历史}{113}{section.7.1}%
-\contentsline {section}{\numberline {7.2}ELMo 多层RNN双向语言模型}{114}{section.7.2}%
-\contentsline {section}{\numberline {7.3}BERT}{116}{section.7.3}%
-\contentsline {subsection}{\numberline {7.3.1}多头注意力层}{117}{subsection.7.3.1}%
-\contentsline {subsection}{\numberline {7.3.2}残差连接、规范化和高维投射}{119}{subsection.7.3.2}%
-\contentsline {subsection}{\numberline {7.3.3}掩码语言模型-MLM}{121}{subsection.7.3.3}%
-\contentsline {subsection}{\numberline {7.3.4}BERT的下游任务训练}{121}{subsection.7.3.4}%
-\contentsline {section}{\numberline {7.4}MTDNN}{123}{section.7.4}%
-\contentsline {subsection}{\numberline {7.4.1}单句分类任务}{125}{subsection.7.4.1}%
-\contentsline {subsection}{\numberline {7.4.2}句子对分类任务}{125}{subsection.7.4.2}%
-\contentsline {subsection}{\numberline {7.4.3}文本相似度任务}{125}{subsection.7.4.3}%
-\contentsline {subsection}{\numberline {7.4.4}语意相关性搜索任务}{126}{subsection.7.4.4}%
-\contentsline {subsection}{\numberline {7.4.5}总结}{126}{subsection.7.4.5}%
-\contentsline {section}{\numberline {7.5}精简BERT模型ALBERT}{127}{section.7.5}%
-\contentsline {subsection}{\numberline {7.5.1}Embedding 矩阵的分解}{127}{subsection.7.5.1}%
-\contentsline {subsection}{\numberline {7.5.2}跨层参数共享}{127}{subsection.7.5.2}%
-\contentsline {section}{\numberline {7.6}其他预训练技术}{128}{section.7.6}%
-\contentsline {chapter}{\numberline {第8章} 序列标注 }{129}{chapter.8}%
-\contentsline {section}{\numberline {8.1}序列标注任务}{129}{section.8.1}%
-\contentsline {section}{\numberline {8.2}条件随机场}{130}{section.8.2}%
-\contentsline {subsection}{\numberline {8.2.1}线性链马尔科夫条件随机场}{130}{subsection.8.2.1}%
-\contentsline {subsection}{\numberline {8.2.2}条件随机场的学习问题}{131}{subsection.8.2.2}%
-\contentsline {subsection}{\numberline {8.2.3}条件随机场的解码问题}{132}{subsection.8.2.3}%
-\contentsline {section}{\numberline {8.3}基于循环神经网络和CRF结合的序列标注算法}{133}{section.8.3}%
-\contentsline {subsection}{\numberline {8.3.1}标签序列得分计算}{135}{subsection.8.3.1}%
-\contentsline {subsection}{\numberline {8.3.2}所有可能标签序列得分计算方法}{135}{subsection.8.3.2}%
-\contentsline {section}{\numberline {8.4}基于膨胀卷积和CRF结合的序列标注算法}{138}{section.8.4}%
-\contentsline {section}{\numberline {8.5}BiLSTM-LAN}{139}{section.8.5}%
-\contentsline {section}{\numberline {8.6}联合训练}{141}{section.8.6}%
-\contentsline {subsection}{\numberline {8.6.1}基于编码器和解码器的联合训练模型}{142}{subsection.8.6.1}%
-\contentsline {subsection}{\numberline {8.6.2}基于孪生网络的联合训练模型}{144}{subsection.8.6.2}%
-\contentsline {subsection}{\numberline {8.6.3}基于门控机制的联合训练模型}{144}{subsection.8.6.3}%
-\contentsline {subsubsection}{\numberline {8.6.3.1}基于注意力机制的RNN联合模型}{145}{subsubsection.8.6.3.1}%
-\contentsline {subsubsection}{\numberline {8.6.3.2}门控机制引入}{145}{subsubsection.8.6.3.2}%
-\contentsline {subsection}{\numberline {8.6.4}基于BERT的联合训练模型}{148}{subsection.8.6.4}%
-\contentsline {chapter}{\numberline {第9章} 语意信息检索 }{149}{chapter.9}%
-\contentsline {section}{\numberline {9.1}精准信息召回任务}{149}{section.9.1}%
-\contentsline {subsection}{\numberline {9.1.1}召回子任务}{150}{subsection.9.1.1}%
-\contentsline {subsection}{\numberline {9.1.2}精排子任务}{154}{subsection.9.1.2}%
-\contentsline {subsubsection}{\numberline {9.1.2.1}BERT-CrossEncoder}{154}{subsubsection.9.1.2.1}%
-\contentsline {subsubsection}{\numberline {9.1.2.2}PolyEncoder}{155}{subsubsection.9.1.2.2}%
-\contentsline {section}{\numberline {9.2}相关信息召回任务}{157}{section.9.2}%
-\contentsline {subsection}{\numberline {9.2.1}衡量排序质量的指标}{158}{subsection.9.2.1}%
-\contentsline {subsection}{\numberline {9.2.2}相关信息召回算法案例剖析}{158}{subsection.9.2.2}%
-\contentsline {subsubsection}{\numberline {9.2.2.1}排序的概率模型}{159}{subsubsection.9.2.2.1}%
-\contentsline {subsubsection}{\numberline {9.2.2.2}topk 概率法}{160}{subsubsection.9.2.2.2}%
-\contentsline {chapter}{\numberline {第10章} 机器翻译 }{161}{chapter.10}%
-\contentsline {section}{\numberline {10.1}语言形式的转变}{161}{section.10.1}%
-\contentsline {section}{\numberline {10.2}编码器解码器框架}{163}{section.10.2}%
-\contentsline {subsection}{\numberline {10.2.1}编码器}{163}{subsection.10.2.1}%
-\contentsline {subsection}{\numberline {10.2.2}解码器}{164}{subsection.10.2.2}%
-\contentsline {subsection}{\numberline {10.2.3}编解码器的优化目标构造}{165}{subsection.10.2.3}%
-\contentsline {section}{\numberline {10.3}基于RNN和注意力机制的机器翻译模型}{165}{section.10.3}%
-\contentsline {subsection}{\numberline {10.3.1}Bahdanau 注意力机制}{166}{subsection.10.3.1}%
-\contentsline {subsection}{\numberline {10.3.2}Luong 注意力机制}{167}{subsection.10.3.2}%
-\contentsline {subsubsection}{\numberline {10.3.2.1}全局注意力}{168}{subsubsection.10.3.2.1}%
-\contentsline {subsubsection}{\numberline {10.3.2.2}局部注意力机制}{169}{subsubsection.10.3.2.2}%
-\contentsline {section}{\numberline {10.4}基于CNN的机器翻译模型}{169}{section.10.4}%
-\contentsline {subsection}{\numberline {10.4.1}门控卷积模块}{171}{subsection.10.4.1}%
-\contentsline {subsection}{\numberline {10.4.2}多步注意力模块}{171}{subsection.10.4.2}%
-\contentsline {section}{\numberline {10.5}Transformer}{172}{section.10.5}%
-\contentsline {subsection}{\numberline {10.5.1}位置编码}{172}{subsection.10.5.1}%
-\contentsline {subsection}{\numberline {10.5.2}编码器}{174}{subsection.10.5.2}%
-\contentsline {subsubsection}{\numberline {10.5.2.1}多头注意力组件}{175}{subsubsection.10.5.2.1}%
-\contentsline {subsubsection}{\numberline {10.5.2.2}前向网络组件}{175}{subsubsection.10.5.2.2}%
-\contentsline {subsubsection}{\numberline {10.5.2.3}残差连接和规范化}{175}{subsubsection.10.5.2.3}%
-\contentsline {subsection}{\numberline {10.5.3}解码器}{176}{subsection.10.5.3}%
-\contentsline {section}{\numberline {10.6}解码算法}{176}{section.10.6}%
-\contentsline {subsection}{\numberline {10.6.1}动态规划最优法}{177}{subsection.10.6.1}%
-\contentsline {subsection}{\numberline {10.6.2}BeamSearch}{178}{subsection.10.6.2}%
-\contentsline {chapter}{\numberline {第11章} 机器阅读理解 }{181}{chapter.11}%
-\contentsline {section}{\numberline {11.1}机器阅读理解的四种任务}{181}{section.11.1}%
-\contentsline {subsection}{\numberline {11.1.1}完形填空}{182}{subsection.11.1.1}%
-\contentsline {subsection}{\numberline {11.1.2}单项或者多项选择}{182}{subsection.11.1.2}%
-\contentsline {subsection}{\numberline {11.1.3}答案片段抽取}{183}{subsection.11.1.3}%
-\contentsline {subsection}{\numberline {11.1.4}自由问答}{183}{subsection.11.1.4}%
-\contentsline {section}{\numberline {11.2}机器阅读理解的解决框架}{183}{section.11.2}%
-\contentsline {subsection}{\numberline {11.2.1}上下文和问题交互模块}{184}{subsection.11.2.1}%
-\contentsline {subsection}{\numberline {11.2.2}机器阅读理解的答案预测或者生成模块}{187}{subsection.11.2.2}%
-\contentsline {chapter}{参考文献}{189}{chapter*.96}%
+\contentsline {subsubsection}{\numberline {3.3.2.2}泛化损失法}{38}{subsubsection.3.3.2.2}%
+\contentsline {subsection}{\numberline {3.3.3}正则化和权重衰减}{38}{subsection.3.3.3}%
+\contentsline {chapter}{\numberline {第4章} 分词和词向量 }{41}{chapter.4}%
+\contentsline {section}{\numberline {4.1}词表最长匹配法}{41}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}前向匹配}{41}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}后向匹配和双向匹配算法}{42}{subsection.4.1.2}%
+\contentsline {section}{\numberline {4.2}概率法}{42}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}基于隐马尔可夫过程的分词法}{42}{subsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.1.1}隐马尔可夫过程}{43}{subsubsection.4.2.1.1}%
+\contentsline {subsubsection}{\numberline {4.2.1.2}隐马尔可夫过程分词}{51}{subsubsection.4.2.1.2}%
+\contentsline {section}{\numberline {4.3}Subword 技术}{52}{section.4.3}%
+\contentsline {section}{\numberline {4.4}词向量}{53}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}CBOW}{54}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Skip-gram}{56}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3}Glove}{58}{subsection.4.4.3}%
+\contentsline {subsection}{\numberline {4.4.4}词向量的评估方法}{61}{subsection.4.4.4}%
+\contentsline {chapter}{\numberline {第5章} 语言模型 }{63}{chapter.5}%
+\contentsline {section}{\numberline {5.1}语言模型的定义和句子通顺度评估}{63}{section.5.1}%
+\contentsline {section}{\numberline {5.2}前馈神经网络语言模型}{63}{section.5.2}%
+\contentsline {section}{\numberline {5.3}循环神经网络语言模型}{65}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}循环神经网络}{65}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}循环神经网络语言模型}{68}{subsection.5.3.2}%
+\contentsline {subsubsection}{\numberline {5.3.2.1}循环神经网络的两种训练模式}{69}{subsubsection.5.3.2.1}%
+\contentsline {subsubsection}{\numberline {5.3.2.2}循环神经网络语言模型的模型细节}{70}{subsubsection.5.3.2.2}%
+\contentsline {section}{\numberline {5.4}卷积神经网络语言模型}{71}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}卷积神经网络}{71}{subsection.5.4.1}%
+\contentsline {subsection}{\numberline {5.4.2}门控卷积神经网络语言模型}{74}{subsection.5.4.2}%
+\contentsline {section}{\numberline {5.5}自注意力神经网络语言模型}{76}{section.5.5}%
+\contentsline {subsection}{\numberline {5.5.1}自注意力机制}{76}{subsection.5.5.1}%
+\contentsline {subsection}{\numberline {5.5.2}GPT-自注意力神经网络语言模型}{77}{subsection.5.5.2}%
+\contentsline {chapter}{\numberline {第6章} 文本分类技术 }{83}{chapter.6}%
+\contentsline {section}{\numberline {6.1}二分类和多分类}{83}{section.6.1}%
+\contentsline {section}{\numberline {6.2}文本分类的评价指标}{84}{section.6.2}%
+\contentsline {section}{\numberline {6.3}经典文本分类技术}{86}{section.6.3}%
+\contentsline {section}{\numberline {6.4}神经网络文本分类技术概述}{86}{section.6.4}%
+\contentsline {subsection}{\numberline {6.4.1}基于CNN的文本分类技术}{87}{subsection.6.4.1}%
+\contentsline {subsection}{\numberline {6.4.2}基于RNN的文本分类技术}{93}{subsection.6.4.2}%
+\contentsline {subsection}{\numberline {6.4.3}基于RNN和CNN结合的文本分类技术}{95}{subsection.6.4.3}%
+\contentsline {subsubsection}{\numberline {6.4.3.1}RNN-词汇表示层}{95}{subsubsection.6.4.3.1}%
+\contentsline {subsubsection}{\numberline {6.4.3.2}CNN Pooling-句子特征表示层}{96}{subsubsection.6.4.3.2}%
+\contentsline {subsection}{\numberline {6.4.4}神经网络快速文本分类技术-FastText}{98}{subsection.6.4.4}%
+\contentsline {subsection}{\numberline {6.4.5}长文本分类—HAN}{99}{subsection.6.4.5}%
+\contentsline {subsubsection}{\numberline {6.4.5.1}词编码表示}{101}{subsubsection.6.4.5.1}%
+\contentsline {subsubsection}{\numberline {6.4.5.2}句编码表示}{101}{subsubsection.6.4.5.2}%
+\contentsline {subsection}{\numberline {6.4.6}亚词汇级别文本分类-charCNN}{105}{subsection.6.4.6}%
+\contentsline {section}{\numberline {6.5}句对分类技术}{107}{section.6.5}%
+\contentsline {subsection}{\numberline {6.5.1}InferSent}{108}{subsection.6.5.1}%
+\contentsline {subsection}{\numberline {6.5.2}ABCNN}{108}{subsection.6.5.2}%
+\contentsline {subsubsection}{\numberline {6.5.2.1}卷积前注意力方案}{109}{subsubsection.6.5.2.1}%
+\contentsline {subsubsection}{\numberline {6.5.2.2}卷积后注意力方案}{110}{subsubsection.6.5.2.2}%
+\contentsline {subsubsection}{\numberline {6.5.2.3}卷积前注意力和卷积后注意力加权结合方案}{110}{subsubsection.6.5.2.3}%
+\contentsline {subsection}{\numberline {6.5.3}ESIM-增强LSTM模型}{111}{subsection.6.5.3}%
+\contentsline {chapter}{\numberline {第7章} 预训练技术 }{115}{chapter.7}%
+\contentsline {section}{\numberline {7.1}自然语言中预训练技术的发展历史}{115}{section.7.1}%
+\contentsline {section}{\numberline {7.2}ELMo 多层RNN双向语言模型}{116}{section.7.2}%
+\contentsline {section}{\numberline {7.3}BERT}{118}{section.7.3}%
+\contentsline {subsection}{\numberline {7.3.1}多头注意力层}{119}{subsection.7.3.1}%
+\contentsline {subsection}{\numberline {7.3.2}残差连接、规范化和高维投射}{121}{subsection.7.3.2}%
+\contentsline {subsection}{\numberline {7.3.3}掩码语言模型-MLM}{123}{subsection.7.3.3}%
+\contentsline {subsection}{\numberline {7.3.4}BERT的下游任务训练}{123}{subsection.7.3.4}%
+\contentsline {section}{\numberline {7.4}MTDNN}{124}{section.7.4}%
+\contentsline {subsection}{\numberline {7.4.1}单句分类任务}{126}{subsection.7.4.1}%
+\contentsline {subsection}{\numberline {7.4.2}句子对分类任务}{126}{subsection.7.4.2}%
+\contentsline {subsection}{\numberline {7.4.3}文本相似度任务}{128}{subsection.7.4.3}%
+\contentsline {subsection}{\numberline {7.4.4}语意相关性搜索任务}{128}{subsection.7.4.4}%
+\contentsline {subsection}{\numberline {7.4.5}总结}{129}{subsection.7.4.5}%
+\contentsline {section}{\numberline {7.5}精简BERT模型ALBERT}{129}{section.7.5}%
+\contentsline {subsection}{\numberline {7.5.1}Embedding 矩阵的分解}{129}{subsection.7.5.1}%
+\contentsline {subsection}{\numberline {7.5.2}跨层参数共享}{130}{subsection.7.5.2}%
+\contentsline {section}{\numberline {7.6}其他预训练技术}{130}{section.7.6}%
+\contentsline {chapter}{\numberline {第8章} 序列标注 }{133}{chapter.8}%
+\contentsline {section}{\numberline {8.1}序列标注任务}{133}{section.8.1}%
+\contentsline {section}{\numberline {8.2}条件随机场}{134}{section.8.2}%
+\contentsline {subsection}{\numberline {8.2.1}线性链马尔科夫条件随机场}{134}{subsection.8.2.1}%
+\contentsline {subsection}{\numberline {8.2.2}条件随机场的学习问题}{135}{subsection.8.2.2}%
+\contentsline {subsection}{\numberline {8.2.3}条件随机场的解码问题}{136}{subsection.8.2.3}%
+\contentsline {section}{\numberline {8.3}基于循环神经网络和CRF结合的序列标注算法}{137}{section.8.3}%
+\contentsline {subsection}{\numberline {8.3.1}标签序列得分计算}{139}{subsection.8.3.1}%
+\contentsline {subsection}{\numberline {8.3.2}所有可能标签序列得分计算方法}{139}{subsection.8.3.2}%
+\contentsline {section}{\numberline {8.4}基于膨胀卷积和CRF结合的序列标注算法}{142}{section.8.4}%
+\contentsline {section}{\numberline {8.5}BiLSTM-LAN}{143}{section.8.5}%
+\contentsline {section}{\numberline {8.6}联合训练}{145}{section.8.6}%
+\contentsline {subsection}{\numberline {8.6.1}基于编码器和解码器的联合训练模型}{146}{subsection.8.6.1}%
+\contentsline {subsection}{\numberline {8.6.2}基于孪生网络的联合训练模型}{148}{subsection.8.6.2}%
+\contentsline {subsection}{\numberline {8.6.3}基于门控机制的联合训练模型}{148}{subsection.8.6.3}%
+\contentsline {subsubsection}{\numberline {8.6.3.1}基于注意力机制的RNN联合模型}{149}{subsubsection.8.6.3.1}%
+\contentsline {subsubsection}{\numberline {8.6.3.2}门控机制引入}{149}{subsubsection.8.6.3.2}%
+\contentsline {subsection}{\numberline {8.6.4}基于BERT的联合训练模型}{152}{subsection.8.6.4}%
+\contentsline {chapter}{\numberline {第9章} 语意信息检索 }{153}{chapter.9}%
+\contentsline {section}{\numberline {9.1}精准信息召回任务}{153}{section.9.1}%
+\contentsline {subsection}{\numberline {9.1.1}召回子任务}{154}{subsection.9.1.1}%
+\contentsline {subsection}{\numberline {9.1.2}精排子任务}{158}{subsection.9.1.2}%
+\contentsline {subsubsection}{\numberline {9.1.2.1}BERT-CrossEncoder}{158}{subsubsection.9.1.2.1}%
+\contentsline {subsubsection}{\numberline {9.1.2.2}PolyEncoder}{159}{subsubsection.9.1.2.2}%
+\contentsline {section}{\numberline {9.2}相关信息召回任务}{161}{section.9.2}%
+\contentsline {subsection}{\numberline {9.2.1}衡量排序质量的指标}{162}{subsection.9.2.1}%
+\contentsline {subsection}{\numberline {9.2.2}相关信息召回算法案例剖析}{162}{subsection.9.2.2}%
+\contentsline {subsubsection}{\numberline {9.2.2.1}排序的概率模型}{163}{subsubsection.9.2.2.1}%
+\contentsline {subsubsection}{\numberline {9.2.2.2}topk 概率法}{164}{subsubsection.9.2.2.2}%
+\contentsline {chapter}{\numberline {第10章} 机器翻译 }{165}{chapter.10}%
+\contentsline {section}{\numberline {10.1}语言形式的转变}{165}{section.10.1}%
+\contentsline {section}{\numberline {10.2}翻译评价指标-BLUE}{167}{section.10.2}%
+\contentsline {subsection}{\numberline {10.2.1}文本块修正的n-gram精度}{168}{subsection.10.2.1}%
+\contentsline {subsection}{\numberline {10.2.2}长度惩罚因子}{168}{subsection.10.2.2}%
+\contentsline {subsection}{\numberline {10.2.3}BLUE计算公式}{168}{subsection.10.2.3}%
+\contentsline {section}{\numberline {10.3}编码器解码器框架}{169}{section.10.3}%
+\contentsline {subsection}{\numberline {10.3.1}编码器}{169}{subsection.10.3.1}%
+\contentsline {subsection}{\numberline {10.3.2}解码器}{170}{subsection.10.3.2}%
+\contentsline {subsection}{\numberline {10.3.3}编解码器的优化目标构造}{171}{subsection.10.3.3}%
+\contentsline {section}{\numberline {10.4}基于RNN和注意力机制的机器翻译模型}{171}{section.10.4}%
+\contentsline {subsection}{\numberline {10.4.1}Bahdanau 注意力机制}{172}{subsection.10.4.1}%
+\contentsline {subsection}{\numberline {10.4.2}Luong 注意力机制}{173}{subsection.10.4.2}%
+\contentsline {subsubsection}{\numberline {10.4.2.1}全局注意力}{174}{subsubsection.10.4.2.1}%
+\contentsline {subsubsection}{\numberline {10.4.2.2}局部注意力机制}{175}{subsubsection.10.4.2.2}%
+\contentsline {section}{\numberline {10.5}基于CNN的机器翻译模型}{175}{section.10.5}%
+\contentsline {subsection}{\numberline {10.5.1}门控卷积模块}{177}{subsection.10.5.1}%
+\contentsline {subsection}{\numberline {10.5.2}多步注意力模块}{177}{subsection.10.5.2}%
+\contentsline {section}{\numberline {10.6}Transformer}{178}{section.10.6}%
+\contentsline {subsection}{\numberline {10.6.1}位置编码}{178}{subsection.10.6.1}%
+\contentsline {subsection}{\numberline {10.6.2}编码器}{180}{subsection.10.6.2}%
+\contentsline {subsubsection}{\numberline {10.6.2.1}多头注意力组件}{181}{subsubsection.10.6.2.1}%
+\contentsline {subsubsection}{\numberline {10.6.2.2}前向网络组件}{181}{subsubsection.10.6.2.2}%
+\contentsline {subsubsection}{\numberline {10.6.2.3}残差连接和规范化}{181}{subsubsection.10.6.2.3}%
+\contentsline {subsection}{\numberline {10.6.3}解码器}{182}{subsection.10.6.3}%
+\contentsline {section}{\numberline {10.7}解码算法}{182}{section.10.7}%
+\contentsline {subsection}{\numberline {10.7.1}动态规划最优法}{183}{subsection.10.7.1}%
+\contentsline {subsection}{\numberline {10.7.2}BeamSearch}{184}{subsection.10.7.2}%
+\contentsline {chapter}{\numberline {第11章} 机器阅读理解 }{187}{chapter.11}%
+\contentsline {section}{\numberline {11.1}机器阅读理解的四种任务}{187}{section.11.1}%
+\contentsline {subsection}{\numberline {11.1.1}完形填空}{188}{subsection.11.1.1}%
+\contentsline {subsection}{\numberline {11.1.2}单项或者多项选择}{188}{subsection.11.1.2}%
+\contentsline {subsection}{\numberline {11.1.3}答案片段抽取}{189}{subsection.11.1.3}%
+\contentsline {subsection}{\numberline {11.1.4}自由问答}{189}{subsection.11.1.4}%
+\contentsline {section}{\numberline {11.2}机器阅读理解的解决框架}{189}{section.11.2}%
+\contentsline {subsection}{\numberline {11.2.1}上下文和问题交互模块}{190}{subsection.11.2.1}%
+\contentsline {subsection}{\numberline {11.2.2}机器阅读理解的答案预测或者生成模块}{193}{subsection.11.2.2}%
+\contentsline {chapter}{参考文献}{195}{chapter*.100}%
 \contentsfinish 
