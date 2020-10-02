@@ -23,6 +23,7 @@
 \usepackage{xeCJK}
 \usepackage{amsmath}
 \usepackage{xcolor}
+%\usepackage{tipa}
 % 用于算法注释
 \usepackage{algcompatible}
 \renewcommand{\COMMENT}[2][.5\linewidth]{%
@@ -35,6 +36,8 @@
 \usepackage{hyperxmp}
 \usepackage{listings}
 \usepackage{amsmath}
+\usepackage{amsthm,amssymb}
+\usepackage{mathrsfs,subfigure}
 
 \usepackage{glossaries}
 \usepackage{glossaries-extra}
@@ -723,7 +726,7 @@ m_{i,t}&=\alpha m_{i,t-1} + \beta g_{i,t} \\
 $$
 相当于当前的梯度更新，需要参考前一时刻梯度惯性的影响，保证优化有一定的连贯性。
 \subsection{Adam}
-Adam 是一种基于融合了动量和自适应学习率的一种算法，目前是神经网络优化中表现最为出色的一款优化器。我们来介绍着款优化器的细节，首先定义动量和速度，
+Adam 是一种基于融合了动量和自适应学习率的一种算法，目前是神经网络优化中表现最为出色的一款优化器。我们来介绍这款优化器的细节，首先定义动量和速度，
 $$
 \begin{aligned}
 m_{i,t}&=\beta_1 m_{i,t-1} +(1-\beta_1)g_{i,t} \\
@@ -741,6 +744,8 @@ $$
 $$
 \theta_{i,t}  =\theta_{i,t-1} -\eta \frac{1}{\sqrt{v_{i,t}}+\epsilon  } m_{i,t} 
 $$
+\subsection{LazyAdam}
+
 \section{防止过拟合相关技术}
 所谓过拟合是指随着训练步数的增加或者模型的复杂度的增加，模型的训练损失越来越小，在训练集上的准确度越来越高，但是在测试集上，模型的表现越来越差的现象。比较通俗解释是模型的过拟合是指模型在逐渐拟合训练集的细节，导致其对宏观规律的把握能力下降。解决过拟合现象在数据侧可以通过增加训练集的方法来缓解，在模型侧人们也累积了不少技术手段。主要包括dropout、早停止以及正则化和WeightDecay等手段。
 \subsection{dropout 技术}
@@ -924,7 +929,7 @@ $-$ \textbf{学习问题}
 无监督学习问题，在隐马尔可夫过程中，无监督学习问题是指仅给定观察序列的条件下，求模型参数的问题。
 \end{definition}
 
-其中有监督的方法比较容易理解，通常是使用频率来近似概率即可。无监督的方法比较晦涩，涉及到传统机器学习中的一个重要方法——EM算法。这个EM算法比较晦涩难懂，如果展开的话，可能需要较大的篇幅，我们把这部分内容放到了附件中。对于有监督学习我们需要估计三个参数，其估计方法如下：
+其中有监督的方法比较容易理解，通常是使用频率来近似概率即可。无监督的方法比较晦涩，涉及到传统机器学习中的一个重要方法——EM算法。这个EM算法比较晦涩难懂，如果展开的话，可能需要较大的篇幅，我们就不展开了。对于有监督学习我们需要估计三个参数，其估计方法如下：
 \begin{enumerate}
 \item 初始概率矩阵$\Pi$的估计
 
@@ -4083,7 +4088,7 @@ $$
 		\end{tabular}
 \end{table}
 
-\section{扩展课题：神经网络语音处理}
+\chapter{扩展课题：神经网络语音处理}
 
 我们之所以介绍语音处理，一方面因为语音信息是一种表意的形式，是一
 种没有被书写和阅读的“自然语言”，但是人类没办法书写和阅读并不意味着计
@@ -4106,10 +4111,17 @@ $$
 为了解决实际中的问题，人们目前的做法主要集中在两个方向：（1）通过大量的方言标注来学习方言的表意习惯，通过模型学习方言到普通话的一种映射；（2）通过训练不同应用领域的子语言模型来将领域先验引入模型，所谓子语言模型技术就是首先根据发音序列识别出句子所属的一个领域，然后使用这个领域独有的表音序列转文本的数据训练领域独有的语言模型。前者主要解决发音统一问题，后者主要解决同音不同义问题。
 
 语音语意理解模型的第一阶段工作是实现语音信号的特征提取，这一阶段工作的输入为一个一维音频pcm数据组，为了方便我们记为$A=[a_1,a_2,\cdots,a_n], \forall a_i \in \mathbb{R}$，输出为一个二维矩阵$F=[f_1,f_2,\cdots,f_m], \forall f_i \in \mathbb{R}^{1 \times K}$。ASR模型在完成了语音信号特征提取后会将模型构建成一个seq2seq任务完成语音信号特征$F$到发音序列$P=[p_1,p_2,\cdots,p_{m'}], \forall p_i \in S_{phoneme} $的准换
-之后再构建一个seq2seq模型完成从发音序列$P$到文本序列$T=[t_1,t_2,\cdots,t_{m''}], \forall t_i \in S_{vocab}$的转变。最后通过NLP模型完成对音频信号的理解。
+之后再构建一个seq2seq模型完成从发音序列$P$到文本序列$T=[t_1,t_2,\cdots,t_{m''}], \forall t_i \in S_{vocab}$的转变。最后通过NLP模型完成对音频信号的理解。我们并不打算完全展开语音信息理解这课题，主要介绍一下语音信号的特征提取和对齐算法这两个非常有代表性的算法，前者可以用来构建直接基于音频信号的语义理解模型；后者是目前使用最为广泛的ASR算法基石。
 
 \section{语音信号的特征提取}
 语音信号中经过采样量化后形成一个整数序列，这个序列一般不会直接作为ASR声学模型的输入，而要首先经过一些信号处理模块，我们来介绍经典的MFCC语音信号特征提取算法。
+\begin{figure}[htbp]
+	\begin{center}
+		\includegraphics[width=5.6in]{figures/mfcc2.png}
+		\caption{语音信号的特征提取} 
+		\label{fig:mfcc2}
+	\end{center}
+\end{figure}
 \subsection{信号预加重}
 人的声音信号在经过空气介质向外辐射的时候，不同频率的信号在空气中传播的能量损耗是不同，一般频率较高的音频信号相比频率较低的音频信号，损耗更大，因此需要补偿高频信号的损耗。常见的做法有时域方法和频域方法，在ASR技术中通常采用前者，具体做法是如下
 $$
@@ -4135,9 +4147,149 @@ h_j  =\left\{
 \right .  
 $$
 经过信号加窗后，窗内信号为$x^{(i)}_j=x^{(i)}_j*h_j, \forall j \in \{1,2,\cdots,w_t\}$。
-\subsection{FFT}
-完成信号加窗之后，就需要对每个窗口内的信号执行DFT，通常使用FFT来说实现DFT过程
+\subsection{离散傅里叶变换和能量谱}
+完成信号加窗之后，就需要对每个窗口内的信号执行DFT，然后将频域结果拼接起来。这种分窗执行DFT最后拼接的过程一般被成为短时傅里叶变换STFT，DFT的公式如下：
+$$
+f^{(i)}_j = \sum_{n=1}^{w_t}{x^{(i)}_ne^{\frac{-j2\pi k}{w_t}}}
+$$
+通常使用FFT来加速DFT的计算过程，FFT和DFT相关的内容已经超出了本书主要内容讲解的范畴，我们将相关的知识放到了附件中，如果读者有需要可以阅读相关内容。
 
+\subsection{ Mel频阈滤波器组和对数能量}
+人类的听觉系统对于频率的感应并不是线性的，人类对低频段频率变化感知比较敏感，对高频段变化感知比较迟钝。例如频率从20hz提升到40hz，人类的感受通常不止提升了1倍；而频率从2000hz提升到4000hz，人感觉频率变化可能远远不止1倍。人类的频率的感知需要映射到一个被称为mel频域的频率空间才能和人类对声音的感知吻合，这种关系可以用下面的式子来表达:
+$$
+\begin{array}{c}  
+f^{(mel)}= \phi(f^{(hz)})= 2595.0*log_{10}(1+f^{(hz)}/700.0)
+\end{array}    
+$$
+在mel频域，人类对频率的感知相对线性。
+
+首先我们先介绍一下Mel频阈滤波器组，Mel频阈滤波器组是一组频域的三角滤波器，其函数形式如下：
+$$
+H_m(j)  =\left\{  
+\begin{array}{ll}  
+	0 & k<\phi^{-1}(m−1)\\
+	\frac{k-\phi^{-1}(m-1)}{\phi^{-1}(m)-\phi^{-1}(m-1)} & \phi^{-1}(m−1)\le k < \phi^{-1}(m)\\
+	\frac{\phi^{-1}(m+1)-k}{\phi^{-1}(m+1)-\phi^{-1}(m)} & \phi^{-1}(m)\le k < \phi^{-1}(m+1)\\
+	0 & k > \phi^{-1}(m+1) \\
+\end{array}  
+\right .  
+$$
+\begin{figure}[htbp]
+	\begin{center}
+		\includegraphics[width=5.8in]{figures/mfcc1.png}
+		\caption{Mel频域滤波器组}
+		\label{fig:mfcc1}
+	\end{center}
+\end{figure}
+
+Mel 频域滤波器是一组三角带通滤波器，可以看出在低频段滤波器分布比较密集，在高频段滤波器分布比较稀疏，这样比较符合人类对声音频率的感知规律。根据Mel滤波器可以计算信号的对数能量$fbank^{(i)}_m$，如果不计算后序的DCT那么这部分特征被称为fbank特征：
+$$
+fbank^{(i)}_m=log(|f^{(i)}_j|^2 H_m(j)^T) 
+$$
+
+\subsection{DCT}
+最后一步是对fbank特征执行DCT就得到了MFCC特征了。
+
+
+\section{语音识别中的对齐问题和解法}
+\begin{definition}
+	所谓语音识别中的对齐问题实质上是指每个MFCC序列窗口中的音频信号对应的发音单元是什么。
+\end{definition}
+解决这个问题最直观的解法是通过标注来确定，也就是需要标注每个发音序列窗口，这种标注带来的问题是标注量过于巨大，显然是不能接受的。但是如果我们仅仅知道整个序列中的最终的识别序列是什么会造成非常多的不合法序列，举个例子可能存在连续多个的辅音对应的窗口，这显然是不合法的，因为汉语中的发音一般是辅音后面接元音。一个简单的做法是直接将重复的发音单元去重，但是如果本来就存在重复呢？为了解决这个问题，人们提出了一种自动对齐机制，这种自动对齐机制就是大名鼎鼎的CTC自动对齐算法。当然另外一种比较巧妙的做法就是使用seq2seq方法，说白了就是将MFCC特征和对应的label看成是一组平行特征，目前这种方法有取代CTC自动对齐算法的趋势，但是这种方法和自然语言处理中的机器翻译问题基本相同，我们在这里就不详细展开了。
+\subsection{CTC 自动对齐算法}
+我们首先来看一个例子，假定输入信号经过MFCC特征处理之后，分窗长度为6，其特征序列为——$X=[x_1,x_2,x_3,x_4,x_5,x_6]$，这个信号对应的发音序列我们假定是$Y=[c,a,t]$。由于分窗机制可能多个窗口对应一个发音单元，假定对应关系如表\ref{tab:mfcc1}所示。
+\begin{table} [h]
+	\begin{center}
+		\begin{tabular}{lllllll}
+			\hline    
+			MFCC 序列窗口特征&$x_1$&$x_2$&$x_3$&$x_4$&$x_5$&$x_6$\\
+			\hline    
+			人工对齐&$c$&$c$&$a$&$a$&$a$&$t$ \\
+			\hline
+			标签序列&c&a&t&&&\\
+			\hline
+		\end{tabular}
+		\caption{语音识别中的对齐问题实例}  \label{tab:mfcc1}
+	\end{center}
+\end{table}  
+一个非常直观的想法是直接去重，但是如果本身就带有重复，那么上述解法就存在问题了。为了能够区分自然重复和识别重复，需要引入一个空白符号$\epsilon$，来区分这两种情况。添加$\epsilon$后的序列并不一定都是合法的，表\ref{tab:mfcc2}中，我们举了几个有效序列和无效序列。
+
+\begin{table} [h]
+	\begin{center}
+		\begin{tabular}{cccccc|cccccc}
+			\hline
+			\multicolumn{6}{c|}{有效序列}&\multicolumn{6}{|c}{无效序列}\\    
+			\hline
+			$\epsilon$ & c & c & $\epsilon$ & a & t & c &$\epsilon$&c&$\epsilon$&a&t\\
+			%\hline
+			 c & c & a & a & t & t & c & c & a & a & t &\\
+			%\hline
+			c & a & $\epsilon$ & $\epsilon$ & $\epsilon$ & t & c &$\epsilon$&$\epsilon$&$\epsilon$&$\epsilon$&t\\
+			\hline
+		\end{tabular}
+		\caption{语音识别中的对齐问题实例}  \label{tab:mfcc2}
+	\end{center}
+\end{table}  
+从这个例子中我们可以看出一个合法的序列必须满足如下条件：（1）识别序列应该保证单调性，识别序列符号$\pi$与label符号序列$Y$应该保证一致，即对于任意一个$i$通过对$\pi[:i]$去重后存在一个$j$使得$Y[:j]$与去重序列相等；（2）完备性，识别序列符号$\pi$中存在一个值为$Y$标签子序列。可以看出对于一个指定的标签序列$Y$，可能存在多种不同的识别序列与之对应，为了方便我们定义这些序列组成的集合为$\mathcal{S}(Y)$。那么我们定义可解码出标签序列的所有路径的概率和为
+$$
+P(Y|X;\Theta) = \sum_{ \pi \in \mathcal{S}(Y) }{\prod_{i=1}^{|\pi|}{P(\pi [i]|X;\Theta)}}
+$$
+如果使用暴力求解上述问题，计算复杂度过高，为此人们设计了动态规划算法来实现上述求解过程。首先我们对目标序列做预处理
+$$
+\mathscr{F}(Y):Y \rightarrow Y'
+$$
+其中$Y'=[\epsilon,Y_1,\epsilon,Y_2,\cdots,\epsilon,Y_{|Y|},\epsilon]$。
+\begin{figure}[h]
+	\begin{minipage}[b]{.5\linewidth}
+		\centering
+		\subfigure[][当前元素为空白]{\label{fig:ctc1}\includegraphics[width=1.0\linewidth]{figures/ctc1.png}}
+		\subfigure[][当前元素不为空白且当前元素是重复元素]{\label{fig:ctc2}\includegraphics[width=1.0\linewidth]{figures/ctc2.png}}
+	\end{minipage} %\par
+	\medskip
+	\begin{minipage}[b]{.5\linewidth}
+		\centering
+		\subfigure[][其他情况]{\label{fig:ctc3}\includegraphics[width=.6\linewidth]{figures/ctc3.png}}
+	\end{minipage}
+	
+	\caption{ctc算法的状态转换}
+	\label{fig:ctc_state}
+\end{figure}
+我们定义$t$时刻子序列$Y'[:s]$的概率为
+$\alpha_{t,s}$，可以分三种情况来计算，如图\ref{fig:ctc_state}所示：（1）当前时刻元素为$Y'[s]=\epsilon$，那么当前元素可以由前一个非空白字符$Y'[s-1]$或者空白字符$Y'[s]$转换而来，分别表示连续的空白和由一个非空字符转变为空白，如图\ref{fig:ctc_state}(a)所示；（2）当前时刻元素不为空白并且$Y'[s]=Y'[s-2]$，此时只能由空白字符转换而来或者自身转换而来，分别表示同字符的切换和单字符的连续，如图\ref{fig:ctc_state}(b)所示；（3）对于其他情况，当前元素可以由自身字符$Y'[s]$、其他非自身字符$Y'[s-1]$和其他非空白字符$Y'[s-2]$转换而来，如图\ref{fig:ctc_state}(c)所示。整体的状态转移方程：
+$$
+\alpha_{t,s}  =\left\{  
+					\begin{array}{ll}  
+						(\alpha_{t-1,s-1} + \alpha_{t-1,s})p_t(Y'[s]|X)	&  Y'[s]=\epsilon \text{或者}\\
+						(\alpha_{t-1,s-1} +\alpha_{t-1,s})p_t(Y'[s]|X)	& Y'[s] \neq \epsilon \text{且} Y'[s]=Y'[s-2]\\
+						(\alpha_{t-1,s-2} + \alpha_{t-1,s-1} + \alpha_{t-1,s})p_t(Y'[s]|X) & \text{其他情况}
+					\end{array}  
+				\right .  
+$$
+在TensorFlow中，ctc损失和解码过程已经封装好了。
+\begin{lstlisting}[language={python}]
+	tf.nn.ctc_loss(labels, inputs, sequence_length, preprocess_collapse_repeated=False, ctc_merge_repeated=True, ignore_longer_outputs_than_inputs=False, time_major=True)
+	'''
+	输入参数：
+	labels: 是一个 int32 类型的稀疏张量（SparseTensor）， labels.indices[i, :] == [b, t] 表示 labels.values[i] 保存着(batch b, time t)的 id，labels.values[i] must take on values in [0, num_labels)
+	inputs: （常用变量 logits 表示）经过 RNN 后输出的标签预测值，是一个 3D 浮点 Tensor，当 time_major=True(默认)时形状为：(max_time * batch_size * num_classes)，否则形状为：batch_size * max_time * num_classes，ctc_loss will perform the softmax operation for you
+	sequence_length: 1-D int32 vector, size 为 [batch_size]，vector 中的每个值表示序列的长度，形如 [max_time_step,…,max_time_step] ，此 sequence_length 和用在 dynamic_rnn 中的 sequence_length 是一致的， 用来表示 rnn 的哪些输出不是 pad 的.
+	preprocess_collapse_repeated: 是否需要预处理，将重复的 label 合并成一个，默认是 False
+	ctc_merge_repeated: 默认为 True
+	输出：
+	A 1-D float Tensor, size [batch], containing the negative log probabilities，同样也需要对 ctc_loss 求均值。
+	'''
+	tf.nn.ctc_beam_search_decoder(inputs,sequence_length, beam_width=100,
+		top_paths=1,merge_repeated=True)
+	'''
+	inputs：3-D float类型的 Tensor,大小为[max_time x batch_size x num_classes],是logits.
+	sequence_length：1-D int32向量,包含序列长度,具有大小[batch_size].
+	beam_width：int标量大于等于0(波束搜索波束宽度).
+	top_paths：int标量大于等于0,小于等于beam_width(控制输出大小).
+	merge_repeated：Boolean,默认值：True.
+	'''
+\end{lstlisting}
+
+最后需要说明的是，音频信号和短句文字经过特征处理后都可以看成一个实数矩阵，具备时间上的序列特征和空间上的依赖特征，因此在分类和seq2seq以及预训练等自然语言技术都可以应用到音频处理上来，最为成功的应用当属将transformer直接应用到ASR任务中去。
 
 \cite{Moody2016Mixing,2019Hierarchically,2016Attention},
 \cite{Liu2016Attention},
@@ -4162,7 +4314,7 @@ $$
 \cite{Talman2019Sentence,chen2017enhanced,Krizhevsky2012ImageNet}，
 \cite{kingma2014adam,Hinton2014A,Rumelhart1986Learning,2019RoBERTa}，
 \cite{10.5555/3086952,dai2019transformer-xl,2017Focal,IDPatternrecognition,IDMTBook,IDCNLP,Lecun2015Deep}
-
+\cite{fayek2016,2004Algorithm,LightGBM,tyagi2003mel-cepstrum}
 \bibliographystyle{unsrt}  
 \bibliography{example}
 \end{document}
