@@ -1,0 +1,29 @@
+
+\begin{thenomenclature} 
+\nomgroup{A}
+  \item [{ASR}]\begingroup Automatic speech recognition\nomeqref {0}\nompageref{XIII}
+  \item [{BERT}]\begingroup Bidirectional encoder representation from transformer\nomeqref {0}\nompageref{XIII}
+  \item [{Blue}]\begingroup Bilingual evaluation understudy\nomeqref {0}\nompageref{XIII}
+  \item [{BPE}]\begingroup Bytes pair encoding\nomeqref {0}\nompageref{XIII}
+  \item [{CBOW}]\begingroup Continuous bag of words \nomeqref {0}\nompageref{XIII}
+  \item [{CNN}]\begingroup Convolutional neural networks\nomeqref {0}\nompageref{XIII}
+  \item [{CRF}]\begingroup Conditional random field\nomeqref {0}\nompageref{XIII}
+  \item [{Glove}]\begingroup Global vectors for word representation\nomeqref {0}\nompageref{XIII}
+  \item [{GLUE}]\begingroup General language understanding evaluation\nomeqref {0}\nompageref{XIII}
+  \item [{GPT}]\begingroup Generative pre-training\nomeqref {0}\nompageref{XIII}
+  \item [{GRU}]\begingroup Gated recurrent unit\nomeqref {0}\nompageref{XIII}
+  \item [{HDFS}]\begingroup Hadoop distributed file system\nomeqref {0}\nompageref{XIII}
+  \item [{HMM}]\begingroup Hidden markov model\nomeqref {0}\nompageref{XIII}
+  \item [{LAN}]\begingroup Label attention network\nomeqref {0}\nompageref{XIII}
+  \item [{LM}]\begingroup Language model\nomeqref {0}\nompageref{XIII}
+  \item [{LSTM}]\begingroup Long short term memory network\nomeqref {0}\nompageref{XIII}
+  \item [{MRC}]\begingroup Machine reading comprehension\nomeqref {0}\nompageref{XIII}
+  \item [{NLG}]\begingroup  Natural language generation\nomeqref {0}\nompageref{XIII}
+  \item [{NLP}]\begingroup Natural language processing\nomeqref {0}\nompageref{XIII}
+  \item [{NLU}]\begingroup Natural language understanding\nomeqref {0}\nompageref{XIII}
+  \item [{NMT}]\begingroup Neural machine translation\nomeqref {0}\nompageref{XIII}
+  \item [{RNN}]\begingroup Recurrent neural networks\nomeqref {0}\nompageref{XIII}
+  \item [{SAN}]\begingroup Self attention networks\nomeqref {0}\nompageref{XIII}
+  \item [{seq2seq}]\begingroup Sequence to sequence\nomeqref {0}\nompageref{XIII}
+
+\end{thenomenclature}

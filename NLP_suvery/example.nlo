@@ -1,0 +1,24 @@
+\nomenclatureentry{aRNN@[{RNN}]\begingroup Recurrent neural networks\nomeqref {0}|nompageref}{XIII}
+\nomenclatureentry{aCNN@[{CNN}]\begingroup Convolutional neural networks\nomeqref {0}|nompageref}{XIII}
+\nomenclatureentry{aLM@[{LM}]\begingroup Language model\nomeqref {0}|nompageref}{XIII}
+\nomenclatureentry{aBERT@[{BERT}]\begingroup Bidirectional encoder representation from transformer\nomeqref {0}|nompageref}{XIII}
+\nomenclatureentry{aGPT@[{GPT}]\begingroup Generative pre-training\nomeqref {0}|nompageref}{XIII}
+\nomenclatureentry{aCBOW@[{CBOW}]\begingroup Continuous bag of words \nomeqref {0}|nompageref}{XIII}
+\nomenclatureentry{aBPE@[{BPE}]\begingroup Bytes pair encoding\nomeqref {0}|nompageref}{XIII}
+\nomenclatureentry{aGlove@[{Glove}]\begingroup Global vectors for word representation\nomeqref {0}|nompageref}{XIII}
+\nomenclatureentry{aBlue@[{Blue}]\begingroup Bilingual evaluation understudy\nomeqref {0}|nompageref}{XIII}
+\nomenclatureentry{aSAN@[{SAN}]\begingroup Self attention networks\nomeqref {0}|nompageref}{XIII}
+\nomenclatureentry{aNMT@[{NMT}]\begingroup Neural machine translation\nomeqref {0}|nompageref}{XIII}
+\nomenclatureentry{aGLUE@[{GLUE}]\begingroup General language understanding evaluation\nomeqref {0}|nompageref}{XIII}
+\nomenclatureentry{aMRC@[{MRC}]\begingroup Machine reading comprehension\nomeqref {0}|nompageref}{XIII}
+\nomenclatureentry{aASR@[{ASR}]\begingroup Automatic speech recognition\nomeqref {0}|nompageref}{XIII}
+\nomenclatureentry{aHMM@[{HMM}]\begingroup Hidden markov model\nomeqref {0}|nompageref}{XIII}
+\nomenclatureentry{aCRF@[{CRF}]\begingroup Conditional random field\nomeqref {0}|nompageref}{XIII}
+\nomenclatureentry{aLAN@[{LAN}]\begingroup Label attention network\nomeqref {0}|nompageref}{XIII}
+\nomenclatureentry{aLSTM@[{LSTM}]\begingroup Long short term memory network\nomeqref {0}|nompageref}{XIII}
+\nomenclatureentry{aGRU@[{GRU}]\begingroup Gated recurrent unit\nomeqref {0}|nompageref}{XIII}
+\nomenclatureentry{aseq2seq@[{seq2seq}]\begingroup Sequence to sequence\nomeqref {0}|nompageref}{XIII}
+\nomenclatureentry{aHDFS@[{HDFS}]\begingroup Hadoop distributed file system\nomeqref {0}|nompageref}{XIII}
+\nomenclatureentry{aNLP@[{NLP}]\begingroup Natural language processing\nomeqref {0}|nompageref}{XIII}
+\nomenclatureentry{aNLU@[{NLU}]\begingroup Natural language understanding\nomeqref {0}|nompageref}{XIII}
+\nomenclatureentry{aNLG@[{NLG}]\begingroup  Natural language generation\nomeqref {0}|nompageref}{XIII}
