@@ -1,0 +1,93 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: example.aux
+Reallocating 'name_of_file' (item size: 1) to 6 items.
+The style file: unsrt.bst
+Reallocating 'name_of_file' (item size: 1) to 8 items.
+Database file #1: example.bib
+Warning--empty journal in Moody2016Mixing
+Warning--empty journal in 2019Hierarchically
+Warning--empty journal in 2016Attention
+Warning--empty journal in Liu2016Attention
+Warning--empty booktitle in inproceedings
+Warning--empty journal in zhang2015character-level
+Warning--empty journal in yang2016hierarchical
+Warning--empty journal in joulin2017bag
+Warning--empty journal in lai2015recurrent
+Warning--empty journal in 2017Fixing
+Warning--empty journal in mikolov2010recurrent
+Warning--empty journal in radford2019language
+Warning--empty journal in vaswani2017attention
+Warning--empty journal in strubell2017fast
+Warning--empty journal in chen2017enhanced
+Warning--empty journal in mikolov2013efficient
+Warning--empty journal in chen2016xgboost
+Warning--empty journal in akhtar2019textrank
+Warning--empty journal in 2018A
+Warning--empty journal in Baradaran2020A
+Warning--empty journal in 2016Bidirectional
+Warning--empty journal in 2018QANet
+Warning--empty journal in 2016ReasoNet
+Warning--empty journal in 2016Machine
+Warning--empty journal in 2017MEMEN
+Warning--empty journal in 2015Teaching
+Warning--empty journal in 2017RACE
+Warning--empty journal in 2016Iterative
+Warning--empty journal in 2016Dynamic
+Warning--empty journal in papineni2002bleu
+Warning--empty journal in shi2010list-wise
+Warning--empty journal in shen2014a
+Warning--empty journal in joachims2002optimizing
+Warning--empty journal in 2018Investigating
+Warning--empty journal in Krizhevsky2012ImageNet
+Warning--empty journal in 2019RoBERTa
+Warning--empty publisher in IDPatternrecognition
+Warning--empty year in IDPatternrecognition
+Warning--empty publisher in IDMTBook
+Warning--empty year in IDMTBook
+Warning--empty publisher in IDCNLP
+Warning--empty year in IDCNLP
+Warning--empty booktitle in LightGBM
+Warning--empty journal in tyagi2003mel-cepstrum
+You've used 86 entries,
+            1791 wiz_defined-function locations,
+            837 strings with 16992 characters,
+and the built_in function-call counts, 19159 in all, are:
+= -- 1521
+> -- 1104
+< -- 16
++ -- 401
+- -- 315
+* -- 1190
+:= -- 3066
+add.period$ -- 246
+call.type$ -- 86
+change.case$ -- 79
+chr.to.int$ -- 0
+cite$ -- 130
+duplicate$ -- 875
+empty$ -- 1773
+format.name$ -- 315
+if$ -- 4235
+int.to.chr$ -- 0
+int.to.str$ -- 86
+missing$ -- 83
+newline$ -- 420
+num.names$ -- 86
+pop$ -- 398
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 469
+stack$ -- 0
+substring$ -- 933
+swap$ -- 199
+text.length$ -- 16
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 44
+while$ -- 155
+width$ -- 88
+write$ -- 829
+(There were 44 warnings)

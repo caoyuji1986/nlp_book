@@ -39,10 +39,11 @@
 \contentsline {subsubsection}{\numberline {3.2.2.2}RMSProp}{35}{subsubsection.3.2.2.2}%
 \contentsline {subsection}{\numberline {3.2.3}基于动量的优化器}{35}{subsection.3.2.3}%
 \contentsline {subsection}{\numberline {3.2.4}Adam}{36}{subsection.3.2.4}%
+\contentsline {subsection}{\numberline {3.2.5}LazyAdam}{36}{subsection.3.2.5}%
 \contentsline {section}{\numberline {3.3}防止过拟合相关技术}{36}{section.3.3}%
 \contentsline {subsection}{\numberline {3.3.1}dropout 技术}{37}{subsection.3.3.1}%
 \contentsline {subsection}{\numberline {3.3.2}早停止技术}{37}{subsection.3.3.2}%
-\contentsline {subsubsection}{\numberline {3.3.2.1}泛化错误法}{37}{subsubsection.3.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.3.2.1}泛化错误法}{38}{subsubsection.3.3.2.1}%
 \contentsline {subsubsection}{\numberline {3.3.2.2}泛化损失法}{38}{subsubsection.3.3.2.2}%
 \contentsline {subsection}{\numberline {3.3.3}正则化和权重衰减}{38}{subsection.3.3.3}%
 \contentsline {chapter}{\numberline {第4章} 分词和词向量 }{41}{chapter.4}%
@@ -179,5 +180,17 @@
 \contentsline {section}{\numberline {11.2}机器阅读理解的解决框架}{189}{section.11.2}%
 \contentsline {subsection}{\numberline {11.2.1}上下文和问题交互模块}{190}{subsection.11.2.1}%
 \contentsline {subsection}{\numberline {11.2.2}机器阅读理解的答案预测或者生成模块}{193}{subsection.11.2.2}%
-\contentsline {chapter}{参考文献}{195}{chapter*.100}%
+\contentsline {chapter}{\numberline {第12章} 扩展课题：神经网络语音处理 }{195}{chapter.12}%
+\contentsline {section}{\numberline {12.1}语音语意理解的两阶段模型}{196}{section.12.1}%
+\contentsline {section}{\numberline {12.2}语音信号的特征提取}{197}{section.12.2}%
+\contentsline {subsection}{\numberline {12.2.1}信号预加重}{197}{subsection.12.2.1}%
+\contentsline {subsection}{\numberline {12.2.2}信号分帧}{198}{subsection.12.2.2}%
+\contentsline {subsection}{\numberline {12.2.3}信号加窗}{198}{subsection.12.2.3}%
+\contentsline {subsection}{\numberline {12.2.4}离散傅里叶变换和能量谱}{198}{subsection.12.2.4}%
+\contentsline {subsection}{\numberline {12.2.5} Mel频阈滤波器组和对数能量}{199}{subsection.12.2.5}%
+\contentsline {subsection}{\numberline {12.2.6}DCT}{200}{subsection.12.2.6}%
+\contentsline {section}{\numberline {12.3}语音识别中的对齐问题和解法}{200}{section.12.3}%
+\contentsline {subsection}{\numberline {12.3.1}CTC 自动对齐算法}{201}{subsection.12.3.1}%
+\contentsline {section}{\numberline {12.4}语音识别技术和自然语言处理技术}{204}{section.12.4}%
+\contentsline {chapter}{参考文献}{205}{chapter*.105}%
 \contentsfinish 
